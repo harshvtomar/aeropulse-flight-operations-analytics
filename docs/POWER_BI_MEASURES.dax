@@ -1,0 +1,29 @@
+// Session 3 specification only: not yet executed in Power BI.
+// Use these with the detail star schema from data/bi/fact_flights.parquet.
+// Rates are fractions: set Percentage formatting in the model.
+Reported Flights = COALESCE(COUNTROWS(fact_flights), 0)
+Eligible Arrivals = COALESCE(SUM(fact_flights[eligible_arrival]), 0)
+On-Time Arrivals = COALESCE(SUM(fact_flights[on_time_arrival]), 0)
+Late Arrivals = COALESCE(SUM(fact_flights[late_arrival]), 0)
+Cancellations = COALESCE(SUM(fact_flights[cancelled]), 0)
+Diversions = COALESCE(SUM(fact_flights[diverted]), 0)
+On-Time Arrival Rate = DIVIDE([On-Time Arrivals], [Eligible Arrivals])
+Late Arrival Rate = DIVIDE([Late Arrivals], [Eligible Arrivals])
+Cancellation Rate = DIVIDE([Cancellations], [Reported Flights])
+Diversion Rate = DIVIDE([Diversions], [Reported Flights])
+Mean Eligible Arrival Delay Minutes = DIVIDE(SUM(fact_flights[eligible_delay_minutes]), [Eligible Arrivals])
+Mean Late Arrival Delay Minutes = DIVIDE(SUM(fact_flights[late_delay_minutes]), [Late Arrivals])
+Carrier Reported Minutes = SUM(fact_flights[CarrierDelay])
+Weather Reported Minutes = SUM(fact_flights[WeatherDelay])
+NAS Reported Minutes = SUM(fact_flights[NASDelay])
+Security Reported Minutes = SUM(fact_flights[SecurityDelay])
+Late Aircraft Reported Minutes = SUM(fact_flights[LateAircraftDelay])
+Carrier Cause Reported Late Records =
+    COALESCE(COUNTROWS(FILTER(fact_flights,
+        fact_flights[late_arrival] = 1 && NOT ISBLANK(fact_flights[CarrierDelay]))), 0)
+Carrier Cause Late Coverage = DIVIDE([Carrier Cause Reported Late Records], [Late Arrivals])
+Route Meets Volume Screen = IF([Eligible Arrivals] >= 1000, 1, 0)
+// Repeat category-specific coverage for the other four nullable cause columns.
+// Alternative compact model: compute SUM(on_time_arrivals)/SUM(eligible_arrivals)
+// in ONE aggregate table. Do not relate multiple overlapping aggregates to each
+// other or sum their populations. Never average row-level percentages.

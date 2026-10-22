@@ -1,0 +1,15 @@
+{
+  "figures": [
+    "01_delay_severity.png",
+    "02_delay_concentration.png",
+    "03_airline_monthly.png",
+    "04_raw_adjusted_comparisons.png",
+    "05_reported_delay_causes.png",
+    "06_departure_hours.png"
+  ],
+  "cause_eligible_records": 317266,
+  "complete_cause_records": 317266,
+  "cause_mismatch_records": 0,
+  "late_delay_minutes": 22733373.0,
+  "recurring_airports": 24
+}

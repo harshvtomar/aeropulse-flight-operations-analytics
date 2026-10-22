@@ -29,3 +29,33 @@ Hosted GitHub Actions run **39715414479 completed successfully**: https://github
 The public repository tree contained 61 files before this evidence-only update; fetched main matched local tracked file contents. Requirements and source files were readable, and the README rendered with its chart. No raw archives, processed Parquet, databases or detected credential patterns were committed. A publication screenshot is in `reports/evidence/github-publication.png` (captured before CI completed).
 
 Session 1 acceptance criteria are complete. The subsequent documentation/evidence commit preserves this verified implementation. No deployed dashboard is claimed. Full-data verification ran locally; CI deliberately tests fixtures without downloading source data.
+
+
+## Session 2 — October 22–23, 2026
+
+Inspected live main at `b422890be32e1efa609c28222f17f68a0212b7b0`, repository source, tests, reports and provenance before changes. Reproduced the 49-test baseline and 2,749 KPI comparisons using all three authentic month archives; confirmed original source hashes. Preserved Session 1 code, SQL, KPI definitions and measured outputs. Two tied-volume baseline CSVs were restored to their original byte order after verifying identical keyed values.
+
+Published investigation checkpoint `2b90931ec7907179ec183c1fccc6f0451af4fced`. Added ten independent SQL/pandas analyses; statistics and composition-aware comparisons; BI export contracts and readback validation; six figures; analytical reports. Fixed nonconsecutive-month comparison handling and explicit CSV types for all-NULL numeric measures. Fixed the heatmap scale to include the observed 36.2% cell. Synthetic records occur only in automated tests.
+
+Commands executed (from repository root):
+```bash
+python -m pip install -r requirements.txt
+python -m src.ingest --download
+python -m src.warehouse
+python -m src.analysis
+python -m src.investigate
+python -m src.advanced_sql
+python -m src.statistics
+python -m src.mix_analysis
+python -m src.bi_export
+python -m src.session2_report
+python -m src.session2
+python -m pytest -q -m 'not integration'
+python -m pytest -q -m integration
+```
+
+The runtime reset during continuation; pinned requirements were reinstalled. No source records were reconstructed or substituted. The full runner validates the archived fingerprints. Existing pandas downcasting FutureWarnings come from the preserved ingestion implementation; they are recorded, not suppressed.
+
+Session 2 numeric reconciliation: 161,389 SQL-output values + 5,040 statistical-input values + 120,288 mix-cell values = 286,717; plus 21,390 labels. Six figures were visually reviewed. BI exports are excluded from Git, with their inventory/hashes/32-check report committed. Native Power BI and interactive dashboards remain explicitly unimplemented.
+
+Final local verification: **128 passed, zero failures, zero skips**: 124 fixtures (four integration tests deselected) and four genuine-data integration tests (124 fixtures deselected). Logs: `reports/session2/FIXTURE_TEST_RESULTS.txt` and `INTEGRATION_TEST_RESULTS.txt`. The real tests reran all ten new SQL/pandas comparisons, rebuilt/read back all BI exports, checked severe-delay/cause populations and reran original KPI reconciliation. The unified `python -m src.session2` command completed successfully with original source fingerprints. Hosted CI status is recorded separately after publication; it runs fixtures only.

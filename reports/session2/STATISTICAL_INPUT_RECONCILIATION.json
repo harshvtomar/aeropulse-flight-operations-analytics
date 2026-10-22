@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "daily_groups": 1260,
+  "numeric_comparisons": 5040,
+  "method": "pandas from validated Parquet; statuses and delay rederived independently of SQL flags"
+}

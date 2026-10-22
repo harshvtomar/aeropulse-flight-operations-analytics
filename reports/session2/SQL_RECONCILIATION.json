@@ -1,0 +1,62 @@
+{
+  "passed": true,
+  "source_rows": 1645503,
+  "query_count": 10,
+  "numeric_comparisons": 161389,
+  "label_comparisons": 21390,
+  "queries": {
+    "13_delay_severity": {
+      "rows": 5,
+      "numeric_comparisons": 25,
+      "label_comparisons": 5
+    },
+    "14_airline_monthly": {
+      "rows": 42,
+      "numeric_comparisons": 462,
+      "label_comparisons": 42
+    },
+    "15_route_concentration": {
+      "rows": 5914,
+      "numeric_comparisons": 76882,
+      "label_comparisons": 11828
+    },
+    "16_airport_concentration": {
+      "rows": 333,
+      "numeric_comparisons": 3663,
+      "label_comparisons": 333
+    },
+    "17_departure_hour_monthly": {
+      "rows": 72,
+      "numeric_comparisons": 792,
+      "label_comparisons": 0
+    },
+    "18_weekend_monthly": {
+      "rows": 6,
+      "numeric_comparisons": 66,
+      "label_comparisons": 6
+    },
+    "19_daily_normalization": {
+      "rows": 90,
+      "numeric_comparisons": 990,
+      "label_comparisons": 90
+    },
+    "20_cause_coverage": {
+      "rows": 15,
+      "numeric_comparisons": 240,
+      "label_comparisons": 15
+    },
+    "21_cancellation_patterns": {
+      "rows": 4369,
+      "numeric_comparisons": 74273,
+      "label_comparisons": 8738
+    },
+    "22_recurring_airport_delays": {
+      "rows": 333,
+      "numeric_comparisons": 3996,
+      "label_comparisons": 333
+    }
+  },
+  "atol": 1e-08,
+  "rtol": 1e-10,
+  "method": "All SQL output cells independently recomputed from validated Parquet with pandas; eligibility rederived from original status and delay fields."
+}

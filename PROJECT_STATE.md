@@ -21,3 +21,16 @@ No interactive dashboard, Power BI report, causal model, full-year analysis or f
 ## Publication checkpoint
 Initial implementation checkpoint: `391d3e9437a1c50f5dae4ccd89f44f2d3e4795d8` (published).
 Verified full implementation/report commit: `3f9cb13f68eda26617bb87e50d68cd4b9f788a97`. Hosted CI run 39715414479 passed. Session 1 acceptance criteria are complete; final evidence is in SESSION_LOG.md. Use `git rev-parse HEAD` to identify the exact checked-out state; never treat a documentation file's parent SHA as its own SHA.
+
+
+## Session 2 checkpoint — October 23, 2026
+
+Session 1 source, warehouse, dimensions, 12 SQL queries, KPI definitions and provenance are preserved. All 1,645,503 records remain accepted; canonical metrics are unchanged.
+
+Implemented and executed: 10 new SQL analyses; independent SQL/pandas checks (161,389 numeric + 21,390 labels); daily statistical-input checks (5,040); mix-cell checks (120,288); seeded grouped bootstrap; pair-specific common-support standardization; 14 BI exports with 32 validation checks; six new figures and five analytical reports. Seven extreme source records were traced: six internally consistent completed-flight outliers and one unresolved cancelled-flight timeline. No canonical row was removed or capped.
+
+Source fingerprints remain unchanged. Full facts and BI exports are local/ignored and can be regenerated through `python -m src.session2` after the Session 1 import/warehouse commands. Aggregate analytical CSVs and measured evidence are committed. See `docs/BI_DATA_MODEL.md` for inventory, keys and relationship rules.
+
+Network on-time performance is 80.3068%; the day-cluster model interval is 78.3751–82.1702%. This models variation across exchangeable days within months, not sampling error for the counted quarter or complete serial dependence. Only four of 91 carrier pairs meet overlap rules. No adjusted interval, causal superiority or financial impact is asserted.
+
+Remaining scope: Session 3 dashboards, native Power BI verification and Excel deliverables; external evidence for the cancelled outlier; additional quarters and richer dependence modeling if justified. No source access or implementation blocker remains. Consult SESSION_LOG.md for actual final test/CI/publication evidence and NEXT_SESSION_PROMPT.md to resume.

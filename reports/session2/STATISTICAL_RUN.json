@@ -1,0 +1,17 @@
+{
+  "bootstrap_replicates": 2000,
+  "seed": 202501,
+  "calendar_dates": 90,
+  "months": 3,
+  "pair_selection": "three highest reported-flight-volume carriers",
+  "selected_carriers": [
+    "WN",
+    "DL",
+    "AA"
+  ],
+  "bootstrap_unit": "calendar date shared across carriers; stratified within month",
+  "confidence": 0.95,
+  "interval_type": "model-based descriptive day stability, not sampling uncertainty of observed census",
+  "serial_correlation_modelled": false,
+  "multiple_comparison_correction": false
+}

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "strata": 60144,
+  "numeric_comparisons": 120288,
+  "method": "pandas original status/delay fields from validated Parquet, independent SQL grouping"
+}

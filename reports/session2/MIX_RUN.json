@@ -1,0 +1,19 @@
+{
+  "cell_count": 60144,
+  "eligible_pairs": 4,
+  "all_pairs": 91,
+  "strata": [
+    "origin_id",
+    "destination_id",
+    "hour_block",
+    "month"
+  ],
+  "hour_blocks": "00\u201305,06\u201311,12\u201317,18\u201323 local; 2400\u219200",
+  "min_cell_per_carrier": 20,
+  "min_common_n_per_carrier": 1000,
+  "min_common_strata": 20,
+  "min_coverage_per_carrier": 0.1,
+  "reference_population": "pooled eligible flights of the two compared carriers, restricted to common support",
+  "mix_cells_sha256": "d64e5d6980a1a4df9c3bd99a50c02409823e61bec59d56c27d0b44f59ba552bb",
+  "adjusted_interval": "not estimated; point estimates only; raw paired intervals are not adjusted intervals"
+}

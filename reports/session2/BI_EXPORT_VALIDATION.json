@@ -1,0 +1,600 @@
+{
+  "passed": true,
+  "checks_passed": 32,
+  "checks": {
+    "fact_flights_bidirectional_rows": true,
+    "dim_airlines_bidirectional_rows": true,
+    "dim_origin_airports_bidirectional_rows": true,
+    "dim_destination_airports_bidirectional_rows": true,
+    "dim_dates_bidirectional_rows": true,
+    "dim_routes_bidirectional_rows": true,
+    "dim_hours_bidirectional_rows": true,
+    "agg_daily_airline_bidirectional_rows": true,
+    "agg_monthly_origin_bidirectional_rows": true,
+    "agg_monthly_destination_bidirectional_rows": true,
+    "agg_monthly_route_bidirectional_rows": true,
+    "agg_monthly_hour_bidirectional_rows": true,
+    "agg_cancellations_bidirectional_rows": true,
+    "agg_delay_causes_bidirectional_rows": true,
+    "fact_unique_nonnull_key": true,
+    "airlines_unique_nonnull_key": true,
+    "airlines_complete_no_fanout": true,
+    "origin_airports_unique_nonnull_key": true,
+    "origin_airports_complete_no_fanout": true,
+    "destination_airports_unique_nonnull_key": true,
+    "destination_airports_complete_no_fanout": true,
+    "dates_unique_nonnull_key": true,
+    "dates_complete_no_fanout": true,
+    "routes_unique_nonnull_key": true,
+    "routes_complete_no_fanout": true,
+    "hours_unique_nonnull_key": true,
+    "hours_complete_no_fanout": true,
+    "agg_daily_airline_additive_metrics": true,
+    "agg_monthly_origin_additive_metrics": true,
+    "agg_monthly_destination_additive_metrics": true,
+    "agg_monthly_route_additive_metrics": true,
+    "agg_monthly_hour_additive_metrics": true
+  },
+  "source_rows": 1645503,
+  "inventory": [
+    {
+      "file": "fact_flights.parquet",
+      "rows": 1645503,
+      "bytes": 19616533,
+      "sha256": "f0790e8a116a11b8dd750ee2c2b1369c582fa3613186dc2a4736d31ce46dda9d",
+      "columns": [
+        {
+          "name": "flight_record_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date_key",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_date",
+          "type": "DATE"
+        },
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "route_key",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "scheduled_hour",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_number",
+          "type": "INTEGER"
+        },
+        {
+          "name": "cancelled",
+          "type": "INTEGER"
+        },
+        {
+          "name": "diverted",
+          "type": "INTEGER"
+        },
+        {
+          "name": "cancellation_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "eligible_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "on_time_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "late_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "arrival_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "departure_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "distance_miles",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "CarrierDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "WeatherDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "NASDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SecurityDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LateAircraftDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "source_sha256",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "source_row",
+          "type": "BIGINT"
+        }
+      ]
+    },
+    {
+      "file": "dim_airlines.csv",
+      "rows": 14,
+      "bytes": 150,
+      "sha256": "fc058717b2bf0ce95604173328c9c04b711148a56614a110e29287f22ad21066",
+      "columns": [
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "airline_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "file": "dim_origin_airports.csv",
+      "rows": 333,
+      "bytes": 3368,
+      "sha256": "659167c298d4195f100a84aabf6892d3876a20837af676d9866d912c492233de",
+      "columns": [
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "origin_airport_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "file": "dim_destination_airports.csv",
+      "rows": 333,
+      "bytes": 3378,
+      "sha256": "e7be9c170a8667ba8390e77463c7188e3f792de19423338051d0e319666a4600",
+      "columns": [
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "file": "dim_dates.csv",
+      "rows": 90,
+      "bytes": 3179,
+      "sha256": "232269863d990bdfaafe59da8f2f93e4780fabac622c4080268c8205310e70e6",
+      "columns": [
+        {
+          "name": "date_key",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_date",
+          "type": "DATE"
+        },
+        {
+          "name": "year",
+          "type": "INTEGER"
+        },
+        {
+          "name": "month",
+          "type": "INTEGER"
+        },
+        {
+          "name": "day_of_week",
+          "type": "INTEGER"
+        },
+        {
+          "name": "is_weekend",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "file": "dim_routes.csv",
+      "rows": 5914,
+      "bytes": 141987,
+      "sha256": "03854f4317eb3b8a60e03fe38e190ae758709778066087988439280261741217",
+      "columns": [
+        {
+          "name": "route_key",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "file": "dim_hours.csv",
+      "rows": 24,
+      "bytes": 424,
+      "sha256": "e90d566cd5959ca5cf5474cd0e5fc383624fd44e346fe91e44d19aeb7cfc2359",
+      "columns": [
+        {
+          "name": "scheduled_hour",
+          "type": "INTEGER"
+        },
+        {
+          "name": "hour_label",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "file": "agg_daily_airline.csv",
+      "rows": 1260,
+      "bytes": 64847,
+      "sha256": "6dca4d3a9289f560e7bc3c7fe9cffe102b5896f05366a5717c429dd1a065da65",
+      "columns": [
+        {
+          "name": "date_key",
+          "type": "INTEGER"
+        },
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "eligible_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "on_time_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "cancellations",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "diversions",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "file": "agg_monthly_origin.csv",
+      "rows": 991,
+      "bytes": 47513,
+      "sha256": "0f1e31b3abd470c35c36a69d6c52b9b3bd824bfdfd0d94cbbb30d145b93f34c5",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "eligible_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "on_time_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "cancellations",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "diversions",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "file": "agg_monthly_destination.csv",
+      "rows": 991,
+      "bytes": 47359,
+      "sha256": "d3a048f75c131e70f1d538e533df16a46b53e885e05f2782f5443c394d78628c",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "eligible_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "on_time_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "cancellations",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "diversions",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "file": "agg_monthly_route.csv",
+      "rows": 16997,
+      "bytes": 825180,
+      "sha256": "6e69857b21275536a374b964ac14b92abb5ef12560c85a6226f2ccec896d74cd",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "route_key",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "eligible_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "on_time_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "cancellations",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "diversions",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "file": "agg_monthly_hour.csv",
+      "rows": 72,
+      "bytes": 4087,
+      "sha256": "183fd820847eb0c828376020e0db4e7f1f91d7117f6e5ef01cff47c15ce5b9cc",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "scheduled_hour",
+          "type": "INTEGER"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "eligible_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "on_time_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "cancellations",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "diversions",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "file": "agg_cancellations.csv",
+      "rows": 4410,
+      "bytes": 106540,
+      "sha256": "655c831554885593bcc89c2f560a1cea6fef6614d5d1f423eab7cfb4238d753e",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "cancellation_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "cancellations",
+          "type": "BIGINT"
+        }
+      ]
+    },
+    {
+      "file": "agg_delay_causes.csv",
+      "rows": 210,
+      "bytes": 12135,
+      "sha256": "74c210d0d18f219ed372afa057e2c308d6352edf4913e55b7b8bb351bb41e1bb",
+      "columns": [
+        {
+          "name": "month",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "reported_cause",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "reported_flights",
+          "type": "BIGINT"
+        },
+        {
+          "name": "late_arrivals",
+          "type": "HUGEINT"
+        },
+        {
+          "name": "records_with_value",
+          "type": "BIGINT"
+        },
+        {
+          "name": "late_records_with_value",
+          "type": "BIGINT"
+        },
+        {
+          "name": "reported_minutes",
+          "type": "DOUBLE"
+        }
+      ]
+    }
+  ],
+  "source_months": [
+    "2025-01",
+    "2025-02",
+    "2025-03"
+  ],
+  "source_snapshot": [
+    {
+      "month": "2025-01",
+      "source_sha256": "868387dcedaef1b8d8392e608e642219fde50d594c3cf2094aec858167629ccf"
+    },
+    {
+      "month": "2025-02",
+      "source_sha256": "12dc8dbdb3c8b3c20d4c00a8b188196ae202f781a8760871ae502a9c733d0ecd"
+    },
+    {
+      "month": "2025-03",
+      "source_sha256": "9c80fbc2112cdbf3f0613ec2001ba019b3ad75511cd69657080736e7eda9cef4"
+    }
+  ]
+}

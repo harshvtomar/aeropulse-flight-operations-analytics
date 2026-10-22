@@ -5,7 +5,7 @@ A reproducible **Python + DuckDB + SQL** foundation for investigating airline re
 
 **Session 1 foundation:** full January–March 2025 reporting-carrier archives processed; 12 executable analyses; audited quality controls and independently reconciled KPIs. An interactive dashboard and Power BI report are **future work**.
 
-## Verified snapshot
+## Preserved Session 1 snapshot
 
 | Measure | Result |
 |---|---:|
@@ -19,6 +19,35 @@ A reproducible **Python + DuckDB + SQL** foundation for investigating airline re
 | Local tests | 49 passed (48 fixture + 1 authentic-data integration) |
 
 Evidence: [KPI reconciliation](reports/KPI_RECONCILIATION.json), [quality report](reports/DATA_QUALITY_REPORT.md), [test results](reports/TEST_RESULTS.txt), [analysis run](reports/ANALYSIS_RUN.json). CI runs fixture tests without downloading government data; inspect [Actions](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions) for its current status.
+
+## Session 2 — advanced analytics and BI preparation
+
+Session 2 adds **10 analyses (22 total), 6 figures (10 total), day-cluster statistical intervals, transparent route/schedule mix adjustment and 14 validated BI exports**. The canonical quarter and KPI definitions remain unchanged.
+
+- [Executive findings](reports/EXECUTIVE_BUSINESS_INSIGHTS.md): severity, delay concentration, recurring airport patterns and practical investigation priorities.
+- [Extreme-delay investigation](reports/EXTREME_DELAY_INVESTIGATION.md): seven source-traced records retained; sensitivity calculations are separate from canonical KPIs.
+- [Statistics](reports/STATISTICAL_ANALYSIS.md) / [methods](docs/STATISTICAL_METHODS.md): 2,000 seeded month-stratified day resamples, paired differences and explicit uncertainty limits.
+- [Mix comparisons](reports/MIX_ADJUSTMENT_ANALYSIS.md): raw full-network, raw common-support and standardized rates; only 4 of 91 pairs pass overlap screens. Adjusted point estimates are not causal rankings.
+- [Delay-cause reporting](reports/DELAY_CAUSE_ANALYSIS.md): all 317,266 eligible late arrivals have complete allocations, totaling 22,733,373 reported minutes; missing values are never assumed zero.
+- [BI model](docs/BI_DATA_MODEL.md), [measure dictionary](docs/BI_MEASURE_DICTIONARY.md) and [DAX specifications](docs/POWER_BI_MEASURES.dax): a full Parquet fact, six dimensions and seven compact aggregate CSVs, verified with 32 checks. Data exports are regenerated locally and excluded from Git.
+
+Independent Session 2 reconciliation passes **286,717 numeric comparisons and 21,390 labels** (SQL outputs, daily statistical inputs and mix cells). See [SQL](reports/session2/SQL_RECONCILIATION.json), [statistics](reports/session2/STATISTICAL_INPUT_RECONCILIATION.json) and [mix](reports/session2/MIX_INPUT_RECONCILIATION.json) evidence. Fixture and genuine-data test logs are separate in `reports/session2/`.
+
+![Delay severity and allocated delay minutes](reports/session2/figures/01_delay_severity.png)
+
+### Reproduce Session 2
+
+After installing the pinned requirements and importing/building Session 1 as below:
+
+```bash
+python -m src.session2
+python -m pytest -q -m 'not integration'
+python -m pytest -q -m integration
+```
+
+The runner verifies the three raw archive fingerprints first, then executes SQL/pandas reconciliation, raw-row investigation, statistics, mix adjustment, validated BI export and figures. Individual modules can also be run independently. Run one writer at a time. A missing archive or fingerprint mismatch stops execution; do not silently accept revised files. Allow several minutes and sufficient local memory for the full quarter.
+
+The **124 fixture tests** include 76 additional Session 2 cases; **four local integration tests** additionally passed using authentic BTS files (128 total local tests). Hosted CI intentionally runs only fixtures. Native Power BI, Streamlit dashboards and Excel deliverables are Session 3 work; none is claimed to exist yet. See [continuation instructions](NEXT_SESSION_PROMPT.md).
 
 ## Business problem
 Where are delays and cancellations concentrated across carriers, airports, routes, months and departure schedules? This foundation provides transparent denominators and sample sizes so descriptive comparisons can inform further investigation without claiming causal or financial effects.
