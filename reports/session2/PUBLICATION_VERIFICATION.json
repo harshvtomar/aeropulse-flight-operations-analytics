@@ -1,0 +1,57 @@
+{
+  "implementation_sha": "10bd8c570245b0e8c9a0577a0948d8452819d6c0",
+  "workflow_run_id": 39833796318,
+  "workflow_url": "https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/39833796318",
+  "conclusion": "success",
+  "scope": "Fixture tests only; authentic-data integration executed locally, not in hosted CI.",
+  "jobs": [
+    {
+      "name": "fixture-tests",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pip install -r requirements.txt",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run python -m pytest -q -m 'not integration' --junitxml=reports/ci-tests.xml",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "local_fixture_tests_passed": 124,
+  "local_integration_tests_passed": 4,
+  "published_files_verified_byte_for_byte": 66,
+  "raw_and_large_bi_files_committed": false,
+  "readme_http_status": 200,
+  "readme_rendered_content_checked": true
+}

@@ -2,6 +2,8 @@
 
 Continue https://github.com/harshvtomar/aeropulse-flight-operations-analytics on main. Do not rebuild or replace Sessions 1–2. Fetch live main, record its actual SHA and inspect newer work before editing. SESSION_LOG.md records the verified implementation/publication checkpoint; never reset blindly to a historical commit.
 
+Verified Session 2 implementation SHA: `10bd8c570245b0e8c9a0577a0948d8452819d6c0`. [Hosted fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/39833796318). A subsequent documentation/evidence commit may be the current main; use that newest commit without resetting.
+
 ## Reproduce before dashboards
 
 Read README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/DATA_PROVENANCE.md, docs/KPI_DEFINITIONS.md, docs/METHODOLOGY.md, docs/STATISTICAL_METHODS.md, docs/BI_DATA_MODEL.md, docs/BI_MEASURE_DICTIONARY.md and the five Session 2 reports. Inspect source and tests.
