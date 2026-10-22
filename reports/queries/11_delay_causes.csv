@@ -1,0 +1,6 @@
+reported_cause,reported_minutes,records_with_value
+CarrierDelay,7786238.0,317266
+WeatherDelay,1608364.0,317266
+NASDelay,4881464.0,317266
+SecurityDelay,29957.0,317266
+LateAircraftDelay,8427350.0,317266

@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "numeric_comparisons": 2749,
+  "kpis": {
+    "reported_flights": 1645503.0,
+    "eligible_flights": 1611046.0,
+    "on_time_flights": 1293780.0,
+    "late_flights": 317266.0,
+    "cancelled_flights": 30640.0,
+    "diverted_flights": 3817.0,
+    "on_time_pct": 80.3068317105781,
+    "late_pct": 19.693168289421905,
+    "cancellation_pct": 1.862044614929295,
+    "diversion_pct": 0.23196554488202087,
+    "avg_arrival_delay_minutes": 4.984480890055281,
+    "avg_late_arrival_delay_minutes": 71.65398435382298
+  },
+  "tolerance": {
+    "atol": 1e-09,
+    "rtol": 1e-10
+  }
+}

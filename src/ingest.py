@@ -64,6 +64,8 @@ def ingest(path, month, root='.', source_url=None):
         if manifest['source_sha256']!=digest: raise ValueError('Month already imported with different checksum; investigate source revision before replacing')
         for name,h in manifest['artifact_sha256'].items():
             if sha256(target/name)!=h: raise ValueError('Processed artifact checksum mismatch: '+name)
+        out=root/'data/manifests';out.mkdir(parents=True,exist_ok=True)
+        shutil.copy2(target/'manifest.json',out/f'{month}.json')
         return {**manifest,'rerun':'unchanged'}
     with csv_stream(path) as (f,member):
         raw=pd.read_csv(f,dtype=str,low_memory=False)

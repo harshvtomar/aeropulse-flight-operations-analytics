@@ -1,0 +1,25 @@
+{
+  "query_count": 12,
+  "query_rows": {
+    "01_overall": 1,
+    "02_airlines": 14,
+    "03_origin_airports": 333,
+    "04_destination_airports": 333,
+    "05_routes": 261,
+    "06_monthly": 3,
+    "07_weekday": 7,
+    "08_departure_hour": 24,
+    "09_delay_distribution": 6,
+    "10_cancellations": 4,
+    "11_delay_causes": 5,
+    "12_airline_airport_comparison": 516
+  },
+  "tables": {
+    "fact_flights": 1645503,
+    "dim_airlines": 14,
+    "dim_airports": 333,
+    "dim_dates": 90,
+    "data_quality_audit": 3
+  },
+  "figures": 4
+}

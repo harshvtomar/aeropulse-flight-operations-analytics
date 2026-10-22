@@ -1,0 +1,2 @@
+reported_flights,eligible_flights,on_time_flights,late_flights,cancelled_flights,diverted_flights,on_time_pct,late_pct,cancellation_pct,diversion_pct,avg_arrival_delay_minutes,avg_late_arrival_delay_minutes
+1645503,1611046,1293780,317266,30640,3817,80.3068317105781,19.693168289421905,1.862044614929295,0.23196554488202087,4.984480890055281,71.65398435382298

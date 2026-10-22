@@ -1,0 +1,5 @@
+cancellation_code,reported_reason,cancelled_flights,cancelled_share_pct
+B,Weather,24855,81.11945169712794
+A,Carrier,4362,14.236292428198434
+C,National Air System,1415,4.618146214099217
+D,Security,8,0.02610966057441253
