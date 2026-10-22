@@ -20,4 +20,4 @@ No interactive dashboard, Power BI report, causal model, full-year analysis or f
 
 ## Publication checkpoint
 Initial implementation checkpoint: `391d3e9437a1c50f5dae4ccd89f44f2d3e4795d8` (published).
-Final report/CI publication verification is recorded in SESSION_LOG.md and the session's final response. Use `git rev-parse HEAD` to identify the exact checked-out state; never treat a documentation file's parent SHA as its own SHA.
+Verified full implementation/report commit: `3f9cb13f68eda26617bb87e50d68cd4b9f788a97`. Hosted CI run 39715414479 passed. Session 1 acceptance criteria are complete; final evidence is in SESSION_LOG.md. Use `git rev-parse HEAD` to identify the exact checked-out state; never treat a documentation file's parent SHA as its own SHA.

@@ -24,4 +24,8 @@ python -m src.ingest  # all three months unchanged
 Downloads were obtained with Python urllib from the documented public BTS PREZIP URLs; `python -m src.ingest --download` provides the reusable equivalent. Source-level raw-to-accepted reconciliation, 12 query executions and dimension cardinalities are recorded in committed manifests/reports.
 
 ## Publication verification
-Final implementation/report commit and hosted CI status will be appended after checking the remote. No deployed dashboard is claimed. CI requires no source downloads; full-data verification was executed locally.
+Verified implementation/report commit: `3f9cb13f68eda26617bb87e50d68cd4b9f788a97`.
+Hosted GitHub Actions run **39715414479 completed successfully**: https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/39715414479
+The public repository tree contained 61 files before this evidence-only update; fetched main matched local tracked file contents. Requirements and source files were readable, and the README rendered with its chart. No raw archives, processed Parquet, databases or detected credential patterns were committed. A publication screenshot is in `reports/evidence/github-publication.png` (captured before CI completed).
+
+Session 1 acceptance criteria are complete. The subsequent documentation/evidence commit preserves this verified implementation. No deployed dashboard is claimed. Full-data verification ran locally; CI deliberately tests fixtures without downloading source data.

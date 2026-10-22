@@ -4,8 +4,8 @@ Use GPT-6 Astra Medium if available. Continue the existing project; do not rebui
 
 Repository: https://github.com/harshvtomar/aeropulse-flight-operations-analytics
 Branch: main
-Known published implementation checkpoint: 391d3e9437a1c50f5dae4ccd89f44f2d3e4795d8.
-Fetch current main and read SESSION_LOG.md for the later verified report/CI checkpoint. Record `git rev-parse HEAD` before edits. Do not reset to this earlier checkpoint.
+Verified full implementation/report checkpoint: 3f9cb13f68eda26617bb87e50d68cd4b9f788a97. Hosted CI run 39715414479 passed.
+Fetch current main and read SESSION_LOG.md; later documentation/evidence commits preserve the verified implementation. Record `git rev-parse HEAD` before edits. Do not reset to this earlier checkpoint.
 
 ## First verify
 1. Read README, PROJECT_STATE, SESSION_LOG, DATA_PROVENANCE, KPI_DEFINITIONS and METHODOLOGY.
