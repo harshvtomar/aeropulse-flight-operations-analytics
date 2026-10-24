@@ -200,3 +200,17 @@ def test_single_month_chart_uses_categorical_axis(app):
         spec = json.loads(chart.proto.spec)
         assert spec['layout']['xaxis']['type'] == 'category'
     assert json.loads(charts[1].proto.spec)['layout']['yaxis']['title']['text'] == 'Delayed arrivals (%)'
+
+
+def test_backend_reload_recreates_cached_handle(app):
+    import importlib
+    import src.dashboard_data as backend
+    at, _ = app
+    previous = dict(backend.__dict__)
+    try:
+        importlib.reload(backend)
+        at.button[0].click().run()
+        assert not at.exception
+        assert metrics(at)['Reported flights'] == '13'
+    finally:
+        backend.__dict__.update(previous)

@@ -21,13 +21,14 @@ h1,h2,h3{letter-spacing:-.025em}[data-testid="stMetric"]{border:1px solid #dce5e
 </style>''', unsafe_allow_html=True)
 
 
-@st.cache_resource
-def load_data(stamp):
+@st.cache_resource(max_entries=1)
+def load_data(stamp, backend_class_identity):
     return DashboardData(ROOT / 'deployment/data')
 
 
 try:
-    data = load_data((ROOT / 'deployment/data/manifest.json').stat().st_mtime_ns)
+    # A hot deployment may reload the backend module; never reuse an old-class handle.
+    data = load_data((ROOT / 'deployment/data/manifest.json').stat().st_mtime_ns, id(DashboardData))
 except (OSError, ValueError) as exc:
     st.error('The verified reporting package is unavailable. No sample data is substituted.')
     st.code('python -m src.build_dashboard_data')
