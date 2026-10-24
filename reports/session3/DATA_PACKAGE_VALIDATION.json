@@ -1,0 +1,58 @@
+{
+  "passed": true,
+  "checks": {
+    "2025-01_raw_sha256": true,
+    "2025-01_accepted_rows": true,
+    "2025-01_processed_sha256": true,
+    "2025-02_raw_sha256": true,
+    "2025-02_accepted_rows": true,
+    "2025-02_processed_sha256": true,
+    "2025-03_raw_sha256": true,
+    "2025-03_accepted_rows": true,
+    "2025-03_processed_sha256": true,
+    "warehouse_source_fingerprints": true,
+    "warehouse_all_rows_all_retained_cells": true,
+    "full_population_rows": true,
+    "below_25MB": true,
+    "pandas_filtered_scenario_00": true,
+    "pandas_filtered_scenario_01": true,
+    "pandas_filtered_scenario_02": true,
+    "pandas_filtered_scenario_03": true,
+    "pandas_filtered_scenario_04": true,
+    "pandas_filtered_scenario_05": true,
+    "pandas_filtered_scenario_06": true,
+    "pandas_filtered_scenario_07": true,
+    "pandas_filtered_scenario_08": true,
+    "pandas_filtered_scenario_09": true,
+    "pandas_filtered_scenario_10": true,
+    "pandas_filtered_scenario_11": true,
+    "published_checksum_and_rows": true
+  },
+  "checks_passed": 26,
+  "independent_pandas_comparisons": 144,
+  "rows": 1645503,
+  "bytes": 7088684,
+  "parquet_sha256": "739ad9e0acc8f1ff7fa7143e68723db2c1de8fb66389064168f4ed7a4cd27b2a",
+  "sources": [
+    {
+      "month": "2025-01",
+      "source_sha256": "868387dcedaef1b8d8392e608e642219fde50d594c3cf2094aec858167629ccf",
+      "rows": 539747,
+      "source_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_1.zip"
+    },
+    {
+      "month": "2025-02",
+      "source_sha256": "12dc8dbdb3c8b3c20d4c00a8b188196ae202f781a8760871ae502a9c733d0ecd",
+      "rows": 504884,
+      "source_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_2.zip"
+    },
+    {
+      "month": "2025-03",
+      "source_sha256": "9c80fbc2112cdbf3f0613ec2001ba019b3ad75511cd69657080736e7eda9cef4",
+      "rows": 600872,
+      "source_url": "https://www.transtats.bts.gov/PREZIP/On_Time_Reporting_Carrier_On_Time_Performance_1987_present_2025_3.zip"
+    }
+  ],
+  "warehouse_missing_rows": 0,
+  "warehouse_extra_rows": 0
+}

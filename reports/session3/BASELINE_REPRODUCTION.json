@@ -1,0 +1,20 @@
+{
+  "starting_sha": "34c3b3cd8a8704cc9148d965217a4f09aec2791a",
+  "raw_hashes": [
+    {
+      "month": "2025-01",
+      "sha256": "868387dcedaef1b8d8392e608e642219fde50d594c3cf2094aec858167629ccf",
+      "match": true
+    },
+    {
+      "month": "2025-02",
+      "sha256": "12dc8dbdb3c8b3c20d4c00a8b188196ae202f781a8760871ae502a9c733d0ecd",
+      "match": true
+    },
+    {
+      "month": "2025-03",
+      "sha256": "9c80fbc2112cdbf3f0613ec2001ba019b3ad75511cd69657080736e7eda9cef4",
+      "match": true
+    }
+  ]
+}

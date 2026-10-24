@@ -1,0 +1,51 @@
+..F.                                                                     [100%]
+=================================== FAILURES ===================================
+____________________________ test_real_bi_roundtrip ____________________________
+
+real_root = PosixPath('/workspace/scratch/0fc0d437ca1a/aeropulse-flight-operations-analytics')
+
+    def test_real_bi_roundtrip(real_root):
+>       result = bi_export.export(real_root)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_session2_real.py:26: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/bi_export.py:110: in export
+    with duckdb.connect(str(db),read_only=True) as con:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src/bi_export.py:116: in export
+    report=validate_exports(con,temp)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+con = <_duckdb.DuckDBPyConnection object at 0x7f1136235640>
+directory = PosixPath('/workspace/scratch/0fc0d437ca1a/aeropulse-flight-operations-analytics/data/.bi-staging-k47o3vwi')
+
+    def validate_exports(con, directory):
+        """Compare actual read-back tables with original warehouse queries, bidirectionally."""
+        directory = Path(directory)
+        checks = {}
+        files = {'fact_flights': ('parquet', 'SELECT * FROM bi_source'), **{k:('csv',v) for k,v in DIMENSIONS.items()}, **{k:('csv',v) for k,v in AGGREGATES.items()}}
+        inventory = []
+        for name,(ext,query) in files.items():
+            path = directory/f'{name}.{ext}'
+            expected=con.execute(query)
+            schema=[{'name':x[0],'type':str(x[1])} for x in expected.description]
+            # Explicit types preserve numeric NULL-only columns and empty CSV tables.
+            types="{"+", ".join(sql_path(x['name'])+": "+sql_path(x['type']) for x in schema)+"}"
+            reader = f"read_parquet({sql_path(path)})" if ext=='parquet' else f"read_csv({sql_path(path)}, header=true, nullstr='', columns={types}, auto_detect=false)"
+            con.execute(f'CREATE OR REPLACE TEMP VIEW readback_{name} AS SELECT * FROM {reader}')
+            view=f'readback_{name}'
+            # EXCEPT ALL catches row loss, duplication and cell differences, including NULLs.
+            mismatch=con.execute(f'SELECT count(*) FROM (({query}) EXCEPT ALL SELECT * FROM {view})').fetchone()[0]
+>           reverse=con.execute(f'SELECT count(*) FROM (SELECT * FROM {view} EXCEPT ALL ({query}))').fetchone()[0]
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           _duckdb.InvalidInputException: Invalid Input Error: No magic bytes found at end of file '/workspace/scratch/0fc0d437ca1a/aeropulse-flight-operations-analytics/data/.bi-staging-k47o3vwi/fact_flights.parquet'
+E           
+E           LINE 1: ... count(*) FROM (SELECT * FROM readback_fact_flights EXCEPT ALL (SELECT * FROM bi_source))
+E                                                                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+src/bi_export.py:78: InvalidInputException
+=========================== short test summary info ============================
+FAILED tests/test_session2_real.py::test_real_bi_roundtrip - _duckdb.InvalidI...
+1 failed, 3 passed, 124 deselected in 31.40s

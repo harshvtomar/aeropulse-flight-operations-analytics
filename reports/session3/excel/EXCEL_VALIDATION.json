@@ -1,0 +1,250 @@
+{
+  "engine": "@oai/artifact-tool",
+  "native_excel_tested": false,
+  "source_rows": 1645503,
+  "monthly_rows": 42,
+  "totals": {
+    "reported_flights": 1645503,
+    "eligible_arrivals": 1611046,
+    "on_time_arrivals": 1293780,
+    "late_arrivals": 317266,
+    "cancellations": 30640,
+    "diversions": 3817,
+    "eligible_delay_minutes": 8030228,
+    "late_delay_minutes": 22733373
+  },
+  "control_tests": [
+    {
+      "carrier": "All",
+      "month": "All",
+      "reported": 1645503,
+      "on_time_rate": 0.803068317105781,
+      "passed": true
+    },
+    {
+      "carrier": "WN",
+      "month": "2025-02",
+      "reported": 100199,
+      "on_time_rate": 0.8351858179406267,
+      "passed": true
+    },
+    {
+      "carrier": "AA",
+      "month": "2025-03",
+      "reported": 82536,
+      "on_time_rate": 0.7687277124489469,
+      "passed": true
+    },
+    {
+      "carrier": "INVALID",
+      "month": "2025-01",
+      "reported": 0,
+      "on_time_rate": "n.a.",
+      "passed": true
+    },
+    {
+      "carrier": "",
+      "month": "All",
+      "reported": 0,
+      "on_time_rate": "n.a.",
+      "passed": true
+    }
+  ],
+  "airline_rate_checks": [
+    {
+      "carrier": "WN",
+      "expected": 0.8351169967528443,
+      "actual": 0.8351169967528443,
+      "passed": true
+    },
+    {
+      "carrier": "AA",
+      "expected": 0.789404910491004,
+      "actual": 0.789404910491004,
+      "passed": true
+    },
+    {
+      "carrier": "DL",
+      "expected": 0.8080744988927375,
+      "actual": 0.8080744988927375,
+      "passed": true
+    },
+    {
+      "carrier": "OO",
+      "expected": 0.7863742607495254,
+      "actual": 0.7863742607495254,
+      "passed": true
+    },
+    {
+      "carrier": "UA",
+      "expected": 0.8212842705027243,
+      "actual": 0.8212842705027243,
+      "passed": true
+    },
+    {
+      "carrier": "OH",
+      "expected": 0.7131013909604912,
+      "actual": 0.7131013909604912,
+      "passed": true
+    },
+    {
+      "carrier": "B6",
+      "expected": 0.7491931435128738,
+      "actual": 0.7491931435128738,
+      "passed": true
+    },
+    {
+      "carrier": "YX",
+      "expected": 0.8248176099049437,
+      "actual": 0.8248176099049437,
+      "passed": true
+    },
+    {
+      "carrier": "F9",
+      "expected": 0.7458360682638661,
+      "actual": 0.7458360682638661,
+      "passed": true
+    },
+    {
+      "carrier": "MQ",
+      "expected": 0.806618131609502,
+      "actual": 0.806618131609502,
+      "passed": true
+    },
+    {
+      "carrier": "AS",
+      "expected": 0.8086062452399086,
+      "actual": 0.8086062452399086,
+      "passed": true
+    },
+    {
+      "carrier": "NK",
+      "expected": 0.8145308576211856,
+      "actual": 0.8145308576211856,
+      "passed": true
+    },
+    {
+      "carrier": "G4",
+      "expected": 0.7649044224339159,
+      "actual": 0.7649044224339159,
+      "passed": true
+    },
+    {
+      "carrier": "HA",
+      "expected": 0.8401519883406204,
+      "actual": 0.8401519883406204,
+      "passed": true
+    }
+  ],
+  "source_reconciliations": [
+    "cancellations",
+    "severity",
+    "airport late flights",
+    "route late flights"
+  ],
+  "chartBindings": [
+    {
+      "sheet": "Executive",
+      "series": [
+        {
+          "formula": "'Executive'!$E$10:$E$12",
+          "categories": "'Executive'!$D$10:$D$12"
+        }
+      ]
+    },
+    {
+      "sheet": "Airlines",
+      "series": [
+        {
+          "formula": "'Airlines'!$D$6:$D$19",
+          "categories": "'Airlines'!$A$6:$A$19"
+        }
+      ]
+    },
+    {
+      "sheet": "Airports",
+      "series": [
+        {
+          "formula": "'Airports'!$D$6:$D$15",
+          "categories": "'Airports'!$A$6:$A$15"
+        }
+      ]
+    },
+    {
+      "sheet": "Routes",
+      "series": [
+        {
+          "formula": "'Routes'!$D$6:$D$15",
+          "categories": "'Routes'!$A$6:$A$15"
+        }
+      ]
+    },
+    {
+      "sheet": "Severity",
+      "series": [
+        {
+          "formula": "'Severity'!$B$6:$B$10",
+          "categories": "'Severity'!$A$6:$A$10"
+        }
+      ]
+    },
+    {
+      "sheet": "Disruptions",
+      "series": [
+        {
+          "formula": "'Disruptions'!$B$6:$B$10",
+          "categories": "'Disruptions'!$A$6:$A$10"
+        }
+      ]
+    },
+    {
+      "sheet": "Disruptions",
+      "series": [
+        {
+          "formula": "'Disruptions'!$B$16:$B$20",
+          "categories": "'Disruptions'!$A$16:$A$20"
+        }
+      ]
+    }
+  ],
+  "rendered_sheets": [
+    "Executive",
+    "Airlines",
+    "Airports",
+    "Routes",
+    "Severity",
+    "Disruptions",
+    "Monthly source",
+    "Methodology"
+  ],
+  "inputs": [
+    {
+      "file": "data/bi/agg_daily_airline.csv",
+      "sha256": "6dca4d3a9289f560e7bc3c7fe9cffe102b5896f05366a5717c429dd1a065da65"
+    },
+    {
+      "file": "data/bi/dim_airlines.csv",
+      "sha256": "fc058717b2bf0ce95604173328c9c04b711148a56614a110e29287f22ad21066"
+    },
+    {
+      "file": "reports/session2/sql/16_airport_concentration.csv",
+      "sha256": "8df935c67d3a780340ff2c86b72047f022a1fabc191b14b00681a53424a296c7"
+    },
+    {
+      "file": "reports/session2/sql/15_route_concentration.csv",
+      "sha256": "19bb1eff238d229a52b96c7f0e8017a3a0df6dea2cfc7f0cc614b98799a034fb"
+    },
+    {
+      "file": "reports/session2/sql/13_delay_severity.csv",
+      "sha256": "24489661b7e571b6e0cc7a4765311505a89433b51058dd26e2e12bb31592cca6"
+    },
+    {
+      "file": "data/bi/agg_delay_causes.csv",
+      "sha256": "74c210d0d18f219ed372afa057e2c308d6352edf4913e55b7b8bb351bb41e1bb"
+    },
+    {
+      "file": "data/bi/agg_cancellations.csv",
+      "sha256": "655c831554885593bcc89c2f560a1cea6fef6614d5d1f423eab7cfb4238d753e"
+    }
+  ]
+}

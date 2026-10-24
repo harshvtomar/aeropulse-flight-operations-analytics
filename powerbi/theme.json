@@ -1,0 +1,7 @@
+{
+  "name": "AeroPulse Operations",
+  "dataColors": ["#057C83", "#F0A64B", "#4B7BEC", "#BE5265", "#7868A6", "#6C8D72"],
+  "background": "#F5F7FA",
+  "foreground": "#172D40",
+  "tableAccent": "#057C83"
+}

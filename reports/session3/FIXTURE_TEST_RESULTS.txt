@@ -1,0 +1,10 @@
+........................................................................ [ 38%]
+........................................................................ [ 77%]
+...........................................                              [100%]
+=============================== warnings summary ===============================
+tests/test_bi_export.py: 40 warnings
+  /workspace/scratch/0fc0d437ca1a/aeropulse-flight-operations-analytics/src/validate.py:39: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+    raw = d[c].replace(r'^\s*$',np.nan,regex=True)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+187 passed, 8 deselected, 40 warnings in 24.44s

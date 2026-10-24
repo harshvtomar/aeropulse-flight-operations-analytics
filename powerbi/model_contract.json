@@ -1,0 +1,277 @@
+{
+  "artifact_type": "manual-build-contract-not-native-powerbi",
+  "tables": [
+    {
+      "name": "fact_flights",
+      "file": "fact_flights.parquet",
+      "columns": [
+        {
+          "name": "flight_record_id",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "date_key",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_date",
+          "type": "DATE"
+        },
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "route_key",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "scheduled_hour",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_number",
+          "type": "INTEGER"
+        },
+        {
+          "name": "cancelled",
+          "type": "INTEGER"
+        },
+        {
+          "name": "diverted",
+          "type": "INTEGER"
+        },
+        {
+          "name": "cancellation_code",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "eligible_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "on_time_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "late_arrival",
+          "type": "INTEGER"
+        },
+        {
+          "name": "arrival_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "departure_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "eligible_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "late_delay_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "distance_miles",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "CarrierDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "WeatherDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "NASDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "SecurityDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "LateAircraftDelay",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "source_sha256",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "source_row",
+          "type": "BIGINT"
+        }
+      ]
+    },
+    {
+      "name": "dim_airlines",
+      "file": "dim_airlines.csv",
+      "columns": [
+        {
+          "name": "airline_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "airline_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "name": "dim_origin_airports",
+      "file": "dim_origin_airports.csv",
+      "columns": [
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "origin_airport_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "name": "dim_destination_airports",
+      "file": "dim_destination_airports.csv",
+      "columns": [
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_code",
+          "type": "VARCHAR"
+        }
+      ]
+    },
+    {
+      "name": "dim_dates",
+      "file": "dim_dates.csv",
+      "columns": [
+        {
+          "name": "date_key",
+          "type": "INTEGER"
+        },
+        {
+          "name": "flight_date",
+          "type": "DATE"
+        },
+        {
+          "name": "year",
+          "type": "INTEGER"
+        },
+        {
+          "name": "month",
+          "type": "INTEGER"
+        },
+        {
+          "name": "day_of_week",
+          "type": "INTEGER"
+        },
+        {
+          "name": "is_weekend",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "name": "dim_routes",
+      "file": "dim_routes.csv",
+      "columns": [
+        {
+          "name": "route_key",
+          "type": "VARCHAR"
+        },
+        {
+          "name": "origin_airport_id",
+          "type": "INTEGER"
+        },
+        {
+          "name": "destination_airport_id",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "name": "dim_hours",
+      "file": "dim_hours.csv",
+      "columns": [
+        {
+          "name": "scheduled_hour",
+          "type": "INTEGER"
+        },
+        {
+          "name": "hour_label",
+          "type": "VARCHAR"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "one_table": "dim_airlines",
+      "one_column": "airline_id",
+      "many_table": "fact_flights",
+      "many_column": "airline_id",
+      "active": true,
+      "cross_filter": "Single"
+    },
+    {
+      "one_table": "dim_origin_airports",
+      "one_column": "origin_airport_id",
+      "many_table": "fact_flights",
+      "many_column": "origin_airport_id",
+      "active": true,
+      "cross_filter": "Single"
+    },
+    {
+      "one_table": "dim_destination_airports",
+      "one_column": "destination_airport_id",
+      "many_table": "fact_flights",
+      "many_column": "destination_airport_id",
+      "active": true,
+      "cross_filter": "Single"
+    },
+    {
+      "one_table": "dim_dates",
+      "one_column": "date_key",
+      "many_table": "fact_flights",
+      "many_column": "date_key",
+      "active": true,
+      "cross_filter": "Single"
+    },
+    {
+      "one_table": "dim_routes",
+      "one_column": "route_key",
+      "many_table": "fact_flights",
+      "many_column": "route_key",
+      "active": true,
+      "cross_filter": "Single"
+    },
+    {
+      "one_table": "dim_hours",
+      "one_column": "scheduled_hour",
+      "many_table": "fact_flights",
+      "many_column": "scheduled_hour",
+      "active": true,
+      "cross_filter": "Single"
+    }
+  ],
+  "date_table": {
+    "table": "dim_dates",
+    "column": "flight_date"
+  }
+}

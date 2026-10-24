@@ -3,7 +3,23 @@
 
 A reproducible **Python + DuckDB + SQL** foundation for investigating airline reliability with authentic US DOT / Bureau of Transportation Statistics records. Built for Data Analyst, Business Analyst and BI Analyst portfolio review.
 
-**Session 1 foundation:** full January–March 2025 reporting-carrier archives processed; 12 executable analyses; audited quality controls and independently reconciled KPIs. An interactive dashboard and Power BI report are **future work**.
+**Session 1 foundation:** full January–March 2025 reporting-carrier archives processed; 12 executable analyses; audited quality controls and independently reconciled KPIs. Session 3 dashboard and reporting deliverables are described below.
+
+## Session 3 — interactive reporting
+
+Seven Streamlit pages support executive, airline, airport, directed-route, severe-delay, cancellation/cause and business-insight analysis. Month, airline, separate airport roles, route, departure-hour and severity filters query the complete verified population. Rates are recomputed from counts; downloads include filter context. Fixed-quarter statistical studies are explicitly separate from filtered results.
+
+```bash
+python -m pip install -r requirements.txt
+python -m streamlit run app.py
+```
+
+The committed 6.8 MB [deployment package](docs/DEPLOYMENT_DATA.md) contains all 1,645,503 genuine records with only required columns. No full archive download is needed on startup. Deployment and live browser verification are pending at this implementation checkpoint.
+
+- [Excel business report](reports/session3/excel/AeroPulse_Airline_Operations_Business_Report.xlsx): eight sheets, seven native charts and formula-driven airline/month controls. [Validation and limitations](docs/EXCEL_REPORT.md); native Microsoft Excel opening remains unverified.
+- [Power BI implementation package](docs/POWER_BI_SESSION3.md): typed Power Query imports, model relationships, DAX and layout instructions. Native Windows rendering and DAX execution remain unverified; no PBIX is claimed.
+- Local regression: **187 fixture tests + 8 genuine-data integrations passed**. Logs: [fixture](reports/session3/FIXTURE_TEST_RESULTS.txt), [integration](reports/session3/INTEGRATION_TEST_RESULTS.txt). Hosted CI runs fixtures only.
+- [Data reconciliation](reports/session3/DATA_PACKAGE_VALIDATION.json): 26 checks, 144 independent filtered KPI comparisons and bidirectional complete retained-record comparison.
 
 ## Preserved Session 1 snapshot
 
