@@ -1,0 +1,21 @@
+{
+  "pages": 6,
+  "sha256": "336d55967e9472f50f7e95e90e6bc7f567ee3c3995c5927e20ef133f82d0c788",
+  "rendered_with": "Poppler pdftoppm",
+  "visual_review": "All six pages inspected after embedding DejaVu Sans; no clipped text or overlapping content observed.",
+  "text_extracted_per_page": [
+    1049,
+    2049,
+    1390,
+    1222,
+    1598,
+    2263
+  ],
+  "native_bi_claims": "Explicitly pending",
+  "figure_sources": [
+    "reports/session3/screenshots/executive.jpg",
+    "reports/session2/figures/01_delay_severity.png",
+    "reports/session2/figures/04_raw_adjusted_comparisons.png",
+    "reports/session3/excel/previews/Executive.png"
+  ]
+}

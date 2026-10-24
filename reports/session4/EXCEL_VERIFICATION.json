@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "sheets": [
+    "Executive",
+    "Airlines",
+    "Airports",
+    "Routes",
+    "Severity",
+    "Disruptions",
+    "Monthly source",
+    "Methodology"
+  ],
+  "charts": [
+    {
+      "part": "xl/drawings/charts/chart1.xml",
+      "references": [
+        "'Executive'!$D$10:$D$12",
+        "'Executive'!$E$10:$E$12"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart2.xml",
+      "references": [
+        "'Airlines'!$A$6:$A$19",
+        "'Airlines'!$D$6:$D$19"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart3.xml",
+      "references": [
+        "'Airports'!$A$6:$A$15",
+        "'Airports'!$D$6:$D$15"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart4.xml",
+      "references": [
+        "'Routes'!$A$6:$A$15",
+        "'Routes'!$D$6:$D$15"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart5.xml",
+      "references": [
+        "'Severity'!$A$6:$A$10",
+        "'Severity'!$B$6:$B$10"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart6.xml",
+      "references": [
+        "'Disruptions'!$A$6:$A$10",
+        "'Disruptions'!$B$6:$B$10"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    },
+    {
+      "part": "xl/drawings/charts/chart7.xml",
+      "references": [
+        "'Disruptions'!$A$16:$A$20",
+        "'Disruptions'!$B$16:$B$20"
+      ],
+      "cache_point_counts": [
+        0,
+        0
+      ]
+    }
+  ],
+  "cached_formula_errors": [],
+  "validated_controls": [
+    "B5",
+    "B6"
+  ],
+  "native_excel_tested": false,
+  "limitation": "Chart source references are present; chart caches are empty. Native Excel open/refresh/render has not been tested.",
+  "workbook_sha256": "266458575152a84af85faff831b29d3e7b144174a19c36601355b29b8b65fed4",
+  "session": 4,
+  "environment": "Linux",
+  "native_excel_version": null
+}
