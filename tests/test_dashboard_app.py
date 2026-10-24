@@ -189,3 +189,14 @@ def test_authentic_app_all_pages_baseline():
     finally:
         st.cache_resource.clear()
         st.cache_data.clear()
+
+
+def test_single_month_chart_uses_categorical_axis(app):
+    at, _ = app
+    at.multiselect(key='months').set_value(['2025-01']).run()
+    charts = at.get('plotly_chart')
+    assert len(charts) == 3
+    for chart in charts[:2]:
+        spec = json.loads(chart.proto.spec)
+        assert spec['layout']['xaxis']['type'] == 'category'
+    assert json.loads(charts[1].proto.spec)['layout']['yaxis']['title']['text'] == 'Delayed arrivals (%)'

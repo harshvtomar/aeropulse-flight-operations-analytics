@@ -12,12 +12,12 @@ PAGES = ['Executive Overview', 'Airline Performance', 'Airport Performance', 'Ro
          'Delay Investigation', 'Cancellations and Delay Causes', 'Business Insights']
 st.set_page_config(page_title='AeroPulse | Flight Operations', page_icon='✈', layout='wide')
 st.markdown('''<style>
-.block-container{max-width:1480px;padding-top:2rem;padding-bottom:3rem}
+.block-container{max-width:1480px;padding-top:4rem;padding-bottom:3rem}
 h1,h2,h3{letter-spacing:-.025em}[data-testid="stMetric"]{border:1px solid #dce5ef;border-radius:12px;padding:14px;background:#fff}
 [data-testid="stMetricValue"]{font-variant-numeric:tabular-nums;font-size:1.9rem}
 [data-testid="stSidebar"]{background:#f1f5fa}.eyebrow{font-size:.75rem;letter-spacing:.18em;color:#1965a8;font-weight:700}
 .hero{border-bottom:1px solid #dce5ef;margin-bottom:1rem;padding-bottom:1rem}.hero h1{margin-bottom:0}.hero p{color:#55677c}
-@media(max-width:700px){.block-container{padding:1rem}.hero h1{font-size:2rem}}
+@media(max-width:700px){.block-container{padding:4rem 1rem 1rem}.hero h1{font-size:2rem}}
 </style>''', unsafe_allow_html=True)
 
 
@@ -122,11 +122,13 @@ def chart(frame, x, y, title, line=False, color=None):
         st.info('No eligible values for ' + title.lower() + '.')
         return
     kwargs = dict(data_frame=frame, x=x, y=y, color=color, title=title,
-                  labels={x: x.replace('_', ' ').title(), y: y.replace('_', ' ').title()},
+                  labels={x: x.replace('_', ' ').title(), y: {'late_pct': 'Delayed arrivals (%)', 'on_time_pct': 'On-time arrivals (%)', 'cancellation_pct': 'Cancellation rate (%)', 'reported_flights': 'Reported flights', 'late_flights': 'Delayed arrivals', 'reported_minutes': 'Reported delay minutes'}.get(y, y.replace('_', ' ').title())},
                   color_discrete_sequence=['#1965A8', '#008779', '#D97724', '#9467bd', '#65758b'])
     fig = px.line(**kwargs, markers=True) if line else px.bar(**kwargs)
     fig.update_layout(template='plotly_white', font=dict(family='Arial', size=13, color='#20344b'),
                       margin=dict(l=8, r=16, t=55, b=12), height=380, legend_title_text='')
+    if x not in {'date', 'hour'}:
+        fig.update_xaxes(type='category')
     if y.endswith('_pct'):
         fig.update_yaxes(ticksuffix='%', rangemode='tozero')
     st.plotly_chart(fig, width='stretch', config={'displaylogo': False})
