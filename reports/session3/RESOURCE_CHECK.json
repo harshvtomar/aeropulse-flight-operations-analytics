@@ -1,0 +1,45 @@
+{
+  "scope": "Local Linux single-process measurements, not hosted performance guarantee",
+  "startup_seconds": 0.04128730600018571,
+  "queries": [
+    {
+      "population": "full quarter",
+      "seconds": 0.06988351699988016,
+      "kpis": {
+        "reported_flights": 1645503,
+        "eligible_flights": 1611046,
+        "on_time_flights": 1293780,
+        "late_flights": 317266,
+        "cancelled_flights": 30640,
+        "diverted_flights": 3817,
+        "on_time_pct": 80.3068317105781,
+        "late_pct": 19.693168289421905,
+        "cancellation_pct": 1.862044614929295,
+        "diversion_pct": 0.23196554488202087,
+        "avg_arrival_delay_minutes": 4.984480890055281,
+        "avg_late_arrival_delay_minutes": 71.65398435382298,
+        "signed_arrival_delay_minutes": 8030228.0
+      }
+    },
+    {
+      "population": "AA January DFW-LAX",
+      "seconds": 0.03258586400011154,
+      "kpis": {
+        "reported_flights": 380,
+        "eligible_flights": 364,
+        "on_time_flights": 276,
+        "late_flights": 88,
+        "cancelled_flights": 16,
+        "diverted_flights": 0,
+        "on_time_pct": 75.82417582417582,
+        "late_pct": 24.175824175824175,
+        "cancellation_pct": 4.2105263157894735,
+        "diversion_pct": 0.0,
+        "avg_arrival_delay_minutes": 6.532967032967033,
+        "avg_late_arrival_delay_minutes": 61.84090909090909,
+        "signed_arrival_delay_minutes": 2378.0
+      }
+    }
+  ],
+  "max_rss_mib": 80.65625
+}

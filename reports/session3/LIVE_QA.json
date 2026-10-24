@@ -1,0 +1,101 @@
+{
+  "checked_date": "2026-10-24",
+  "implementation_commit": "ffc105c8e19a643a3d1662b1999d90f44fa515ec",
+  "url": "https://aeropulse-flight-operations-analytics.streamlit.app/",
+  "browser": "Connected Chrome",
+  "desktop_viewport": [
+    1319,
+    982
+  ],
+  "mobile_viewport": [
+    390,
+    844
+  ],
+  "pages_verified": [
+    "Executive Overview",
+    "Airline Performance",
+    "Airport Performance",
+    "Route Analytics",
+    "Delay Investigation",
+    "Cancellations and Delay Causes",
+    "Business Insights"
+  ],
+  "canonical_cards": {
+    "reported": 1645503,
+    "eligible": 1611046,
+    "on_time_display": "80.31%",
+    "cancel_display": "1.86%"
+  },
+  "scenarios": [
+    {
+      "selection": "January",
+      "reported": 539747,
+      "eligible": 522269
+    },
+    {
+      "selection": "January / AA",
+      "reported": 75088,
+      "eligible": 72082,
+      "on_time_display": "80.77%"
+    },
+    {
+      "selection": "January / AA / DFW to LAX",
+      "reported": 380,
+      "eligible": 364,
+      "on_time_display": "75.82%",
+      "minimum_1000_groups": 0,
+      "minimum_100_groups": 1
+    },
+    {
+      "selection": "January / scheduled hours 01\u201323",
+      "reported": 539175
+    },
+    {
+      "selection": "Ineligible only",
+      "reported": 34457,
+      "eligible": 0,
+      "arrival_rates": "Not available"
+    },
+    {
+      "selection": "No airlines",
+      "result": "Explicit empty state, no KPI cards"
+    },
+    {
+      "selection": "Reset",
+      "result": "All month, airline and severity tags restored; all canonical cards restored"
+    }
+  ],
+  "separate_airport_roles_verified": true,
+  "download_events": [
+    "AeroPulse_Airline_Operations_Business_Report.xlsx",
+    "aeropulse_monthly_overview.csv"
+  ],
+  "download_limit": "Browser confirmed completed downloads; CSV content and workbook formulas independently checked by automated tests, not by native Excel.",
+  "mobile": {
+    "main_client_width": 390,
+    "main_scroll_width": 390,
+    "document_client_width": 390,
+    "document_scroll_width": 390,
+    "sidebar_navigation_to_cancellations": true,
+    "temporary_viewport_restored": true
+  },
+  "public_http": {
+    "status": 200,
+    "authentication_credentials_supplied": false,
+    "anonymous_cookie_jar": true,
+    "note": "Streamlit anonymous session redirects require cookie continuity; initial no-cookie curl hit redirect limit. No cookie or redirect payload committed."
+  },
+  "fixed_during_qa": [
+    "Categorical month axes avoid microsecond ticks for one month",
+    "Header spacing below Streamlit toolbar",
+    "Cached backend invalidation across module reload",
+    "Explicit reset assignments synchronize browser controls"
+  ],
+  "hosted_fixture_ci": {
+    "url": "https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40045724415",
+    "status": "completed",
+    "conclusion": "success"
+  },
+  "native_powerbi_tested": false,
+  "native_excel_tested": false
+}

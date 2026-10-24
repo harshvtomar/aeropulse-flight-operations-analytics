@@ -1,3 +1,23 @@
+# Current project state — Session 3
+
+Verified implementation: `ffc105c8e19a643a3d1662b1999d90f44fa515ec`. Repository: https://github.com/harshvtomar/aeropulse-flight-operations-analytics. Live dashboard: https://aeropulse-flight-operations-analytics.streamlit.app/. Verified on 24 October 2026. Later documentation commits may follow this tested implementation; fetch current main without resetting to this historical SHA.
+
+- Seven public Streamlit pages function with shared fact-based filters, screening, clear empty states and contextual CSV downloads. Full-quarter reference studies are visibly separate.
+- All 1,645,503 genuine Jan–Mar 2025 records retained in a 7,088,684-byte deployment Parquet; source hashes, all canonical KPIs and original analytical files preserved.
+- 197 local tests pass: 189 fixtures and 8 genuine-data integrations; 69 additional tests over Session 2. [Hosted fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40045724415); CI does not execute the full raw-source integration workflow.
+- Deployment package: 26 checks, 144 independent filtered KPI comparisons, complete bidirectional retained-record reconciliation. Earlier 286,717 numeric / 21,390 label comparisons and 32 BI-export checks remain preserved.
+- Excel workbook delivered at `reports/session3/excel/AeroPulse_Airline_Operations_Business_Report.xlsx`: eight sheets, seven charts, formula-driven carrier/month controls. Recalculation and saved XML checked; native Excel open/refresh unverified, chart caches empty.
+- Power BI build assets are in `powerbi/`; no native PBIX/PBIP, M/DAX execution or rendering is claimed. A supported Windows environment is required for Session 4 verification.
+- Real desktop/mobile screenshots, live filter/download evidence and local resource measurements are in `reports/session3/`.
+
+## Remaining work
+
+Session 4: native Excel chart refresh/recalculation and Power BI Desktop build/verification; final integrated QA, accessible interaction review, portfolio narrative and resume bullets. Free-host cold starts and limited live-browser coverage are documented. No paid infrastructure, causal business effects or financial savings are claimed. Session 3 dashboard and Excel delivery is complete; full native-BI acceptance remains partial.
+
+## Historical checkpoints below
+
+Earlier sections are retained as historical records; their then-outstanding dashboard tasks are superseded by the current state above.
+
 # Project state — Session 1
 
 Date: 22 October 2026. Repository: https://github.com/harshvtomar/aeropulse-flight-operations-analytics

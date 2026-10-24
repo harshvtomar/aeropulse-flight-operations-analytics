@@ -1,0 +1,15 @@
+{
+  "baseline": "34c3b3cd8a8704cc9148d965217a4f09aec2791a",
+  "original_files_changed": [
+    "NEXT_SESSION_PROMPT.md",
+    "PROJECT_STATE.md",
+    "README.md",
+    "SESSION_LOG.md",
+    "requirements.txt"
+  ],
+  "all_other_original_files_byte_preserved": true,
+  "credential_pattern_scan": "no matches in changed publication files",
+  "local_document_links": "passed",
+  "largest_deployment_file_bytes": 7088684,
+  "excluded_raw_files_committed": false
+}

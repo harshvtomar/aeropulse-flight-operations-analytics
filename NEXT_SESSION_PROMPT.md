@@ -1,42 +1,28 @@
-# AeroPulse Intelligence — Session 3 continuation
+# AeroPulse Intelligence — Session 4 continuation
 
-Continue https://github.com/harshvtomar/aeropulse-flight-operations-analytics on main. Do not rebuild or replace Sessions 1–2. Fetch live main, record its actual SHA and inspect newer work before editing. SESSION_LOG.md records the verified implementation/publication checkpoint; never reset blindly to a historical commit.
+Continue the existing repository https://github.com/harshvtomar/aeropulse-flight-operations-analytics on main. Do not rebuild or replace Sessions 1–3. Fetch remote main and inspect its actual HEAD before edits. Last verified implementation: `ffc105c8e19a643a3d1662b1999d90f44fa515ec`; subsequent documentation commits preserve this implementation. [Its hosted fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40045724415). Live app: https://aeropulse-flight-operations-analytics.streamlit.app/.
 
-Verified Session 2 implementation SHA: `10bd8c570245b0e8c9a0577a0948d8452819d6c0`. [Hosted fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/39833796318). A subsequent documentation/evidence commit may be the current main; use that newest commit without resetting.
-
-## Reproduce before dashboards
-
-Read README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/DATA_PROVENANCE.md, docs/KPI_DEFINITIONS.md, docs/METHODOLOGY.md, docs/STATISTICAL_METHODS.md, docs/BI_DATA_MODEL.md, docs/BI_MEASURE_DICTIONARY.md and the five Session 2 reports. Inspect source and tests.
+Read README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/DASHBOARD_DEPLOYMENT.md, docs/DEPLOYMENT_DATA.md, docs/EXCEL_REPORT.md, docs/POWER_BI_SESSION3.md and reports/session3/LIVE_QA.json. Preserve every canonical KPI and source fingerprint. Complete records: 1,645,503; eligible: 1,611,046; on-time 80.3068317105781%; cancellations 1.862044614929295%.
 
 ```bash
+git fetch origin main
+git status --short
+git log -5 --oneline
 python -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m pytest -q -m 'not integration'
-# Only if genuine local archives/bundles are absent:
-python -m src.ingest --download
-python -m src.warehouse
-# Reuse the immutable source fingerprints; investigate any mismatch.
-python -m src.session2
+python -m streamlit run app.py
+# Only when original local data/warehouse are present and fingerprints verified:
 python -m pytest -q -m integration
 ```
 
-Expect 1,645,503 accepted official BTS flights (January–March 2025), 14 carriers, 333 airports and 90 days; 22 SQL analyses total; 124 fixture tests plus four genuine-data integration tests. Session 2 reconciles 286,717 numeric values and 21,390 labels independently; BI export validation has 32 checks. Baseline 2,749 KPI comparisons remain intact. Raw/processed data and the DuckDB file are intentionally excluded from Git.
+Expected baseline: 189 fixture tests and 8 genuine integrations, 197 total. Fixture CI does not download BTS archives. The committed complete minimal deployment Parquet runs the dashboard without original raw archives; full integrations need the excluded original datasets. Do not substitute synthetic data into production. Rebuild package only with `python -m src.build_dashboard_data` after source fingerprint checks.
 
-## Session 3 deliverables
-
-1. Build a tested Streamlit dashboard with executive overview, airline, airport, route, severe-delay investigation, cancellations and reported delay allocations. Use compact BI aggregates where their grain supports the selected filters; use the detail Parquet for combined filters and drill-through. Do not apply unsupported filters to aggregates.
-2. Implement a native Power BI report only where Power BI can actually be opened and tested. Start from the six-dimension fact model and DAX specifications; retain single-direction relationships and separate origin/destination roles. If native tooling is unavailable, state that blocker and preserve model specifications without claiming a PBIX is verified.
-3. Create Excel business deliverables with documented denominators, reproducible data extracts and checked formulas. Use the appropriate spreadsheet skill.
-4. Test slicer combinations, empty populations, missing cause values, numerator/denominator behavior, download correctness and small screens. Reconcile every headline number to the existing warehouse.
-5. Publish incrementally to this repository. Deploy only an actual working dashboard; verify its live behavior, remote source and hosted CI. Preserve Session 2 findings and all established tests.
-6. Update PROJECT_STATE, SESSION_LOG and NEXT_SESSION_PROMPT with actual results and the exact final commit/CI evidence.
-
-## Analytical guardrails and unresolved evidence
-
-- Canonical on-time rate is 80.3068317105781% of 1,611,046 eligible arrivals. Cancellation rate is 1.862044614929295% of all reported flights. Never classify cancellations/diversions as normal on-time arrivals.
-- Seven extreme source records remain unchanged. Six completed outliers are internally consistent, not externally confirmed; the cancelled AA1115 MCI–ORD record on January 15 needs event-level source follow-up. Sensitivity scenarios must remain separately labeled.
-- Day-cluster intervals model exchangeable days within months; they do not fully address serial weather effects or future-quarter uncertainty.
-- Only 4/91 carrier pairs pass common-support screens. Pair-specific adjusted point estimates are not a common-reference league table; raw intervals cannot be attached to adjusted rates.
-- Delay-cause missing values remain missing. Category denominators repeat across five category rows. Cancellation-reason exports contain cancelled flights only and cannot supply an all-flight cancellation denominator.
-- No realized savings, causal superiority or scientifically established root cause is demonstrated. No native Power BI report, Streamlit app or Excel workbook existed at the Session 2 checkpoint.
+Priorities:
+1. Inspect live seven-page dashboard, cross-page filters, empty state, reset, hourly/severity controls and CSV/Excel downloads. Prior live QA fixed single-month axes, header spacing, backend reload cache identity and browser reset synchronization; preserve those regression tests.
+2. On an available supported Windows machine, follow docs/POWER_BI_SESSION3.md exactly: import seven typed tables, create six relationships, implement DAX and five report pages, compare native filtered totals against powerbi/native_validation_expected.json. Save/open/test the actual report before claiming native completion. Do not purchase Windows infrastructure without separate authorization.
+3. Open the delivered workbook in actual Microsoft Excel if available, recalculate airline/month controls, refresh all seven charts (saved caches are empty), inspect references and save a verified native copy. Existing artifact-tool and XML checks are not native Excel verification.
+4. Recheck mobile layouts, accessible colors/labels, method/tooltips and links. Expand browser coverage only where useful. Add screenshots if behavior changes.
+5. Refine recruiter case study and factual resume bullets. No fabricated financial impacts or causal airline-quality claims.
+6. Commit incrementally to this repository only, verify remote bytes/HEAD and Actions, update continuation records and record exact final SHA in delivery. A commit cannot contain its own SHA; reference its tested parent/checkpoint and resolve live main for later documentation commits.

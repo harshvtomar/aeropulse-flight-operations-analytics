@@ -63,3 +63,22 @@ Final local verification: **128 passed, zero failures, zero skips**: 124 fixture
 Verified implementation commit: `10bd8c570245b0e8c9a0577a0948d8452819d6c0`. [Hosted CI run 39833796318](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/39833796318) completed successfully; the fixture test step passed. All 66 changed/new files were fetched and compared byte-for-byte to the verified local files. GitHub README returned HTTP 200 with rendered Session 2 content and figure references; local document links passed. No raw ZIPs, full BI datasets, databases or credential-pattern matches were present in the publication set (largest added file 708,720 bytes).
 
 Session 2 acceptance criteria are complete. The final documentation/evidence commit follows this tested implementation and does not change analytical code. Record its actual SHA from remote main; a commit cannot contain its own SHA. Session 3 instructions are committed in NEXT_SESSION_PROMPT.md. Outstanding external evidence and future dashboard scope are documented, not represented as completed work.
+
+
+## Session 3 — implementation, deployment and QA (24 October 2026)
+
+Started from remote `34c3b3cd8a8704cc9148d965217a4f09aec2791a`. Preserved all Session 1–2 analytical code/reports and raw fingerprints. Runtime interruptions required dependency reinstalls; incomplete test runs were not counted. Initial baseline BI-export integration encountered one transient mounted-filesystem Parquet read-after-write error; original failure and successful retry logs are retained. Final integrations passed.
+
+Built seven Streamlit pages, a complete minimal 6.8 MB deployment fact, contextual CSV downloads, Excel workbook and Power BI implementation package. Dataset build verified all retained cells/multiplicity, 26 checks and 144 independent filtered KPI comparisons. Excel has eight sheets and seven charts; native Excel and Windows Power BI remain unverified.
+
+Executed pinned dependency installation, `python -m src.build_dashboard_data`, fixture and genuine integration pytest runs, Excel builder/validation, Power BI contract checks and live Chrome QA. Final local outcome: 189 fixtures + 8 genuine integrations = 197 passing tests, no failures. Existing 40 pandas FutureWarnings are recorded unchanged. Resource check measured about 81 MiB peak RSS for standalone data queries; this is not hosted application memory or a capacity guarantee.
+
+Publication checkpoints:
+- `a4503bd9e3d7b07ebee7effcd8e1f92fa5c1e14a`: 53 files published and compared byte-for-byte; [fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40044687939).
+- `267463dbbe3e3214fb1a0f616c6fed212676594b`: categorical single-month charts, clearer axis labels and header spacing.
+- `cc2f7f3fcdfa232b4bb50ee5f18ab01a8d2a4b60`: cached-backend invalidation on module reload, regression test.
+- `ffc105c8e19a643a3d1662b1999d90f44fa515ec`: explicit browser-control reset synchronization; [fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40045724415).
+
+Public deployment configured through the authorized connected Streamlit account: existing repository main, app.py, Python 3.12, no secrets. Assigned URL https://aeropulse-flight-operations-analytics.streamlit.app/. Seven live pages, canonical cards, month/airline/route/hour/severity populations, minimum-volume screen, separate origin role, empty state, reset, desktop and 390×844 layout were checked. Excel and filtered CSV downloads completed. Anonymous HTTP request with session-cookie continuity returned 200; no cookie/auth payload is committed. LIVE_QA.json records scope and limits. Two additional live-discovered regression tests raise Session 2's 128 tests to 197.
+
+Session 3 dashboard/Excel deliverables are implemented and published; full native-BI acceptance remains partial. Session 4 must verify Excel in native software and create/test the native Power BI report in supported Windows, then complete portfolio QA. The following documentation/evidence commit does not change analytical or application code; resolve current remote main for its exact SHA.

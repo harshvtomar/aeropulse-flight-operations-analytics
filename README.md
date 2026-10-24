@@ -1,7 +1,7 @@
 # AeroPulse Intelligence
 ### Airline Operations, Flight Delay & Network Performance Analytics
 
-A reproducible **Python + DuckDB + SQL** foundation for investigating airline reliability with authentic US DOT / Bureau of Transportation Statistics records. Built for Data Analyst, Business Analyst and BI Analyst portfolio review.
+A reproducible **Python + DuckDB + SQL + Streamlit** analytics project for investigating airline reliability with authentic US DOT / Bureau of Transportation Statistics records. Built for Data Analyst, Business Analyst and BI Analyst portfolio review.
 
 **Session 1 foundation:** full January–March 2025 reporting-carrier archives processed; 12 executable analyses; audited quality controls and independently reconciled KPIs. Session 3 dashboard and reporting deliverables are described below.
 
@@ -14,12 +14,16 @@ python -m pip install -r requirements.txt
 python -m streamlit run app.py
 ```
 
-The committed 6.8 MB [deployment package](docs/DEPLOYMENT_DATA.md) contains all 1,645,503 genuine records with only required columns. No full archive download is needed on startup. Deployment and live browser verification are pending at this implementation checkpoint.
+The committed 6.8 MB [deployment package](docs/DEPLOYMENT_DATA.md) contains all 1,645,503 genuine records with only required columns. No full archive download is needed on startup. **[Open the live dashboard](https://aeropulse-flight-operations-analytics.streamlit.app/)**. All seven pages and principal interactions were verified in Chrome on desktop and a 390-pixel mobile viewport. [Deployment guide](docs/DASHBOARD_DEPLOYMENT.md) · [Live QA evidence](reports/session3/LIVE_QA.json).
 
 - [Excel business report](reports/session3/excel/AeroPulse_Airline_Operations_Business_Report.xlsx): eight sheets, seven native charts and formula-driven airline/month controls. [Validation and limitations](docs/EXCEL_REPORT.md); native Microsoft Excel opening remains unverified.
 - [Power BI implementation package](docs/POWER_BI_SESSION3.md): typed Power Query imports, model relationships, DAX and layout instructions. Native Windows rendering and DAX execution remain unverified; no PBIX is claimed.
-- Local regression: **187 fixture tests + 8 genuine-data integrations passed**. Logs: [fixture](reports/session3/FIXTURE_TEST_RESULTS.txt), [integration](reports/session3/INTEGRATION_TEST_RESULTS.txt). Hosted CI runs fixtures only.
+- Local regression: **189 fixture tests + 8 genuine-data integrations passed**. Logs: [fixture](reports/session3/FIXTURE_TEST_RESULTS.txt), [integration](reports/session3/INTEGRATION_TEST_RESULTS.txt). Hosted CI runs fixtures only.
 - [Data reconciliation](reports/session3/DATA_PACKAGE_VALIDATION.json): 26 checks, 144 independent filtered KPI comparisons and bidirectional complete retained-record comparison.
+
+![Live AeroPulse executive dashboard](reports/session3/screenshots/executive.jpg)
+
+The Streamlit product and Excel workbook are delivered. Native Power BI report creation/rendering and native Microsoft Excel open/refresh checks remain outstanding; Session 3 is not claimed fully complete across every native-BI acceptance criterion.
 
 ## Preserved Session 1 snapshot
 
