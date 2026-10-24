@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-24",
+  "url": "https://aeropulse-flight-operations-analytics.streamlit.app/",
+  "browser": "Connected Chrome",
+  "pages_observed": [
+    "Executive Overview",
+    "Airline Performance",
+    "Airport Performance",
+    "Route Analytics",
+    "Delay Investigation",
+    "Cancellations and Delay Causes",
+    "Business Insights"
+  ],
+  "earlier_session4_checks": {
+    "january_reported": 539747,
+    "january_AA_reported": 75088,
+    "empty_airline_selection": "Clear no-flight state observed",
+    "excel_download": "Download completed; native Excel not opened",
+    "filtered_monthly_csv": "Download completed; browser download bytes not independently read"
+  },
+  "resumed_checks": {
+    "baseline_reported": 1645503,
+    "baseline_eligible": 1611046,
+    "baseline_on_time_display": "80.31%",
+    "exclude_under_15": {
+      "reported": 351723,
+      "eligible": 317266,
+      "on_time_display": "0.00%",
+      "late_display": "100.00%"
+    },
+    "hours_1_to_23": {
+      "reported": 1643431,
+      "eligible": 1608996,
+      "independent_package_query": "matched"
+    },
+    "reset": "Full-quarter canonical cards restored",
+    "mobile_viewport": [
+      390,
+      844
+    ],
+    "main_client_and_scroll_width": 390,
+    "document_client_and_scroll_width": 390,
+    "mobile_visual": "KPI cards stack, headings readable; screenshot mobile.jpg",
+    "viewport_override": "reset after review"
+  },
+  "limitations": [
+    "A transient stale page selection during earlier navigation required reload; no persistent exception observed.",
+    "Not an exhaustive browser/device or screen-reader certification.",
+    "Route combination continuation was interrupted; existing Session 3 route QA and fixture coverage retained, not claimed rerun here.",
+    "Live download completion does not establish native spreadsheet execution."
+  ]
+}

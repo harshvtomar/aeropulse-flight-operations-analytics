@@ -82,3 +82,16 @@ Publication checkpoints:
 Public deployment configured through the authorized connected Streamlit account: existing repository main, app.py, Python 3.12, no secrets. Assigned URL https://aeropulse-flight-operations-analytics.streamlit.app/. Seven live pages, canonical cards, month/airline/route/hour/severity populations, minimum-volume screen, separate origin role, empty state, reset, desktop and 390×844 layout were checked. Excel and filtered CSV downloads completed. Anonymous HTTP request with session-cookie continuity returned 200; no cookie/auth payload is committed. LIVE_QA.json records scope and limits. Two additional live-discovered regression tests raise Session 2's 128 tests to 197.
 
 Session 3 dashboard/Excel deliverables are implemented and published; full native-BI acceptance remains partial. Session 4 must verify Excel in native software and create/test the native Power BI report in supported Windows, then complete portfolio QA. The following documentation/evidence commit does not change analytical or application code; resolve current remote main for its exact SHA.
+
+
+## Session 4 — 24 October 2026
+
+Preserved Session 3 checkpoint fe0915b494d2a9f766b5acee56bbc382a7a2463b. Read existing state, model/measure documentation and native requirements. Reproduced 189 fixture tests (40 pre-existing pandas FutureWarnings) and 8 genuine-data integrations; fingerprint checks matched all three original BTS archives. Commands: `python -m pytest -q -m 'not integration'` and `python -m pytest -q -m integration`. Full logs are in reports/session4.
+
+Created six-page portfolio PDF with scripts/build_case_study.py; rendered via Poppler and reviewed all six pages after embedding DejaVu Sans. Added optional requirements-report.txt, truthful resume bullets and 28 interview answers. Rechecked original workbook XML, preserved its SHA, and generated 33 pending native Power BI reference observations. Native application execution was unavailable; exact completion handoff committed.
+
+Published and byte-verified checkpoint 0e8da3f2122c5d7d2bdd2f20fe8e97e6fb68d6eb. Hosted fixture Actions run 40068665936 succeeded. Workspace maintenance subsequently removed local files; recovered by cloning existing remote main. Original ignored raw/warehouse files were not restored. Committed prior test logs remain genuine; subsequent canonical/hour checks use only the checksum-validated complete deployment package.
+
+Live Chrome checks covered all seven pages, January/AA population, empty airlines, CSV and Excel download completion. Transient stale page selection required a reload. Resumed severity and hours 01–23 checks and reset passed; 390×844 review found no main/document horizontal overflow. Saved screenshot and scoped evidence in reports/session4/LIVE_QA.json. No new application/source/test changes were needed or invented to increase test counts.
+
+Final documentation records partial overall status pending native Excel and Windows Power BI. Retrieve the actual final documentation SHA with `git rev-parse HEAD`; a commit cannot embed its own SHA.

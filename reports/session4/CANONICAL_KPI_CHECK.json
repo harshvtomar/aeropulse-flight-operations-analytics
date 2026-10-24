@@ -1,0 +1,34 @@
+{
+  "canonical": {
+    "reported_flights": 1645503,
+    "eligible_flights": 1611046,
+    "on_time_flights": 1293780,
+    "late_flights": 317266,
+    "cancelled_flights": 30640,
+    "diverted_flights": 3817,
+    "on_time_pct": 80.3068317105781,
+    "late_pct": 19.693168289421905,
+    "cancellation_pct": 1.862044614929295,
+    "diversion_pct": 0.23196554488202087,
+    "avg_arrival_delay_minutes": 4.984480890055281,
+    "avg_late_arrival_delay_minutes": 71.65398435382298,
+    "signed_arrival_delay_minutes": 8030228.0
+  },
+  "hours_1_to_23": {
+    "reported_flights": 1643431,
+    "eligible_flights": 1608996,
+    "on_time_flights": 1291977,
+    "late_flights": 317019,
+    "cancelled_flights": 30620,
+    "diverted_flights": 3815,
+    "on_time_pct": 80.29709209966961,
+    "late_pct": 19.70290790033039,
+    "cancellation_pct": 1.8631752717333432,
+    "diversion_pct": 0.23213630508369382,
+    "avg_arrival_delay_minutes": 4.997367302342579,
+    "avg_late_arrival_delay_minutes": 71.65366429141471,
+    "signed_arrival_delay_minutes": 8040744.0
+  },
+  "package_checksum_validation": "passed",
+  "date": "2026-10-24"
+}

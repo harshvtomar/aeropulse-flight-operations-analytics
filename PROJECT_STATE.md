@@ -1,3 +1,18 @@
+# Current project state — Session 4
+
+Verified portfolio checkpoint: `0e8da3f2122c5d7d2bdd2f20fe8e97e6fb68d6eb`; hosted fixture CI run 40068665936 passed. Fetch current main for subsequent evidence/documentation commits; do not reset to a historical SHA. Verified 24 October 2026.
+
+- Live seven-page dashboard and complete 1,645,503-flight deployment package remain unchanged; canonical KPI recheck passed.
+- Session 4: 189 fixtures + 8 genuine integrations passed before workspace maintenance. Their committed logs and source-fingerprint checks survive. Raw/warehouse files are excluded from Git and were not restored after cleanup; do not misdescribe the post-cleanup package check as a new raw-source integration run.
+- Six-page rendered/visually reviewed portfolio PDF, three resume bullets, 28 interview answers and precise native execution handoff are published.
+- Final browser evidence and mobile screenshot are in reports/session4. Selected live hour/severity/reset cases passed; earlier Session 3 coverage remains preserved.
+- Excel: eight sheets/seven charts, XML verification passed, original artifact unchanged; native Excel opening/recalculation/chart refresh/save/reopen pending.
+- Power BI: existing build package and 33 reference observations ready; native Windows model/DAX/report execution pending. No PBIX claimed.
+
+Overall completion is partial only for outstanding native BI acceptance. Continue with NEXT_SESSION_PROMPT.md; do not rebuild delivered analytics or dashboard.
+
+## Preserved historical state
+
 # Current project state — Session 3
 
 Verified implementation: `ffc105c8e19a643a3d1662b1999d90f44fa515ec`. Repository: https://github.com/harshvtomar/aeropulse-flight-operations-analytics. Live dashboard: https://aeropulse-flight-operations-analytics.streamlit.app/. Verified on 24 October 2026. Later documentation commits may follow this tested implementation; fetch current main without resetting to this historical SHA.

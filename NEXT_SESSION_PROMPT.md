@@ -1,28 +1,21 @@
-# AeroPulse Intelligence — Session 4 continuation
+# AeroPulse — remaining native verification
 
-Continue the existing repository https://github.com/harshvtomar/aeropulse-flight-operations-analytics on main. Do not rebuild or replace Sessions 1–3. Fetch remote main and inspect its actual HEAD before edits. Last verified implementation: `ffc105c8e19a643a3d1662b1999d90f44fa515ec`; subsequent documentation commits preserve this implementation. [Its hosted fixture CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40045724415). Live app: https://aeropulse-flight-operations-analytics.streamlit.app/.
+Continue https://github.com/harshvtomar/aeropulse-flight-operations-analytics on main. Inspect actual HEAD first; verified portfolio checkpoint `0e8da3f2122c5d7d2bdd2f20fe8e97e6fb68d6eb` and fixture CI run 40068665936 passed. Later QA documentation commits may follow. Never reset newer work.
 
-Read README.md, PROJECT_STATE.md, SESSION_LOG.md, docs/DASHBOARD_DEPLOYMENT.md, docs/DEPLOYMENT_DATA.md, docs/EXCEL_REPORT.md, docs/POWER_BI_SESSION3.md and reports/session3/LIVE_QA.json. Preserve every canonical KPI and source fingerprint. Complete records: 1,645,503; eligible: 1,611,046; on-time 80.3068317105781%; cancellations 1.862044614929295%.
+Read PROJECT_STATE.md, SESSION_LOG.md, reports/session4/LIVE_QA.json, docs/NATIVE_BI_COMPLETION_HANDOFF.md and docs/POWER_BI_SESSION3.md. The public seven-page Streamlit product, portfolio PDF and interview guide are delivered. Native Excel and native Power BI are the remaining execution tasks.
 
 ```bash
 git fetch origin main
 git status --short
 git log -5 --oneline
-python -m venv .venv
-source .venv/bin/activate
 python -m pip install -r requirements.txt
 python -m pytest -q -m 'not integration'
 python -m streamlit run app.py
-# Only when original local data/warehouse are present and fingerprints verified:
-python -m pytest -q -m integration
 ```
 
-Expected baseline: 189 fixture tests and 8 genuine integrations, 197 total. Fixture CI does not download BTS archives. The committed complete minimal deployment Parquet runs the dashboard without original raw archives; full integrations need the excluded original datasets. Do not substitute synthetic data into production. Rebuild package only with `python -m src.build_dashboard_data` after source fingerprint checks.
+Expected fixture baseline: 189 passed. Eight genuine integration tests previously passed in Session 4; run them only after original archives, processed data and warehouse are restored with committed fingerprints. The committed deployment Parquet supports all dashboard records; it is not a substitute for original-source integration inputs.
 
-Priorities:
-1. Inspect live seven-page dashboard, cross-page filters, empty state, reset, hourly/severity controls and CSV/Excel downloads. Prior live QA fixed single-month axes, header spacing, backend reload cache identity and browser reset synchronization; preserve those regression tests.
-2. On an available supported Windows machine, follow docs/POWER_BI_SESSION3.md exactly: import seven typed tables, create six relationships, implement DAX and five report pages, compare native filtered totals against powerbi/native_validation_expected.json. Save/open/test the actual report before claiming native completion. Do not purchase Windows infrastructure without separate authorization.
-3. Open the delivered workbook in actual Microsoft Excel if available, recalculate airline/month controls, refresh all seven charts (saved caches are empty), inspect references and save a verified native copy. Existing artifact-tool and XML checks are not native Excel verification.
-4. Recheck mobile layouts, accessible colors/labels, method/tooltips and links. Expand browser coverage only where useful. Add screenshots if behavior changes.
-5. Refine recruiter case study and factual resume bullets. No fabricated financial impacts or causal airline-quality claims.
-6. Commit incrementally to this repository only, verify remote bytes/HEAD and Actions, update continuation records and record exact final SHA in delivery. A commit cannot contain its own SHA; reference its tested parent/checkpoint and resolve live main for later documentation commits.
+1. In accessible Microsoft Excel, follow the exact native checklist, preserve original workbook, test controls B5/B6, refresh seven charts, save/reopen a separate verified copy; record version, hashes and screenshots.
+2. In supported Windows Power BI Desktop, use existing typed imports, six relationships, measures and five-page layout. Verify all 33 expected observations in reports/session4/NATIVE_POWER_BI_RESULTS.csv, interactions and refresh, then save/reopen an actual report and record evidence. No paid infrastructure without separate authorization.
+3. If neither native application is accessible, leave statuses pending. Do not relabel library/XML checks as native tests.
+4. Publish only verified changes to this repository, check remote bytes and CI, update final state with actual evidence. Preserve canonical KPIs, Q1 2025 provenance and all earlier artifacts.

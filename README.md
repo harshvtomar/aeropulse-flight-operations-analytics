@@ -5,6 +5,14 @@ A reproducible **Python + DuckDB + SQL + Streamlit** analytics project for inves
 
 **Session 1 foundation:** full January–March 2025 reporting-carrier archives processed; 12 executable analyses; audited quality controls and independently reconciled KPIs. Session 3 dashboard and reporting deliverables are described below.
 
+## Session 4 — portfolio and final QA
+
+[Six-page portfolio case study](reports/final/AeroPulse_Portfolio_Case_Study.pdf) · [Resume bullets and 28 interview answers](docs/RESUME_AND_INTERVIEW.md) · [Native BI completion checklist](docs/NATIVE_BI_COMPLETION_HANDOFF.md)
+
+The dashboard, authentic-data analysis and portfolio are delivered. Session 4 reran **189 fixture tests and 8 genuine-data integration tests**, with separate [test logs](reports/session4/). [Hosted checkpoint CI passed](https://github.com/harshvtomar/aeropulse-flight-operations-analytics/actions/runs/40068665936); hosted CI tests fixtures, not the original BTS archives. All original source, SQL, tests, analytical reports, deployment data and Excel workbook are preserved.
+
+[Final live QA](reports/session4/LIVE_QA.json) records page checks, downloads, empty states, severity/hour filtering, reset and a 390-pixel mobile review. Canonical KPIs remain unchanged. Native Excel chart refresh/save/reopen and native Power BI model/DAX/report execution remain pending: **full native-BI acceptance is not complete**. [Exact status](reports/session4/NATIVE_VERIFICATION_STATUS.md).
+
 ## Session 3 — interactive reporting
 
 Seven Streamlit pages support executive, airline, airport, directed-route, severe-delay, cancellation/cause and business-insight analysis. Month, airline, separate airport roles, route, departure-hour and severity filters query the complete verified population. Rates are recomputed from counts; downloads include filter context. Fixed-quarter statistical studies are explicitly separate from filtered results.
