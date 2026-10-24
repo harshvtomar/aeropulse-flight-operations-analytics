@@ -67,7 +67,7 @@ python -m pytest -q -m integration
 
 The runner verifies the three raw archive fingerprints first, then executes SQL/pandas reconciliation, raw-row investigation, statistics, mix adjustment, validated BI export and figures. Individual modules can also be run independently. Run one writer at a time. A missing archive or fingerprint mismatch stops execution; do not silently accept revised files. Allow several minutes and sufficient local memory for the full quarter.
 
-The **124 fixture tests** include 76 additional Session 2 cases; **four local integration tests** additionally passed using authentic BTS files (128 total local tests). Hosted CI intentionally runs only fixtures. Native Power BI, Streamlit dashboards and Excel deliverables are Session 3 work; none is claimed to exist yet. See [continuation instructions](NEXT_SESSION_PROMPT.md).
+The **124 fixture tests** include 76 additional Session 2 cases; **four local integration tests** additionally passed using authentic BTS files (128 total local tests). Hosted CI intentionally runs only fixtures. These counts describe the preserved Session 2 checkpoint. The current Streamlit and Excel deliverables are documented above; native Power BI verification remains pending. See [continuation instructions](NEXT_SESSION_PROMPT.md).
 
 ## Business problem
 Where are delays and cancellations concentrated across carriers, airports, routes, months and departure schedules? This foundation provides transparent denominators and sample sizes so descriptive comparisons can inform further investigation without claiming causal or financial effects.
@@ -118,7 +118,7 @@ python -m src.ingest --months 2025-03 --input /absolute/path/to/official-march.z
 
 Or place standard-named ZIPs in `data/raw/` and run `python -m src.ingest`. Missing files fail clearly. Exact reruns verify checksums and do not append rows. A different source file for an existing month or a changed schema fails for review. Do not silently replace imported months; preserve the old manifests and investigate revisions first. Run one writer at a time.
 
-Raw files, Parquet and DuckDB are excluded from Git because they are reproducible and large. [Provenance](docs/DATA_PROVENANCE.md) records exact URLs, raw filenames, counts and SHA-256 fingerprints. Compare newly downloaded hashes before claiming the same source snapshot. No synthetic records are used in published analysis.
+Raw archives, full processed/BI Parquet exports and DuckDB are excluded from Git because they are reproducible and large. The compact, complete-population dashboard Parquet is deliberately committed under deployment/data/. [Provenance](docs/DATA_PROVENANCE.md) records exact URLs, raw filenames, counts and SHA-256 fingerprints. Compare newly downloaded hashes before claiming the same source snapshot. No synthetic records are used in published analysis.
 
 ## SQL outputs
 
@@ -145,6 +145,6 @@ Fixtures are explicitly synthetic and confined to tests. The real integration te
 
 ## Limitations and continuation
 
-This is one quarter of domestic reporting-carrier operations, not all US aviation. Reported cause minutes are allocations, not independently proven root causes. Airline/airport rankings are unadjusted for route and schedule mix. Five extreme arrival delays and seven extreme departure delays are flagged but retained. There are no claimed savings or profit improvements.
+This is one quarter of domestic reporting-carrier operations, not all US aviation. Reported cause minutes are allocations, not independently proven root causes. Interactive airline/airport rankings are raw; the separate, explicitly labeled Session 2 pair-specific mix study supplies adjusted comparisons with common-support limits. Five extreme arrival delays and seven extreme departure delays are flagged but retained. There are no claimed savings or profit improvements.
 
-Continue from [PROJECT_STATE.md](PROJECT_STATE.md), [SESSION_LOG.md](SESSION_LOG.md) and [NEXT_SESSION_PROMPT.md](NEXT_SESSION_PROMPT.md). Session 2 should deepen operational segmentation, investigate warning cases, add uncertainty/mix-aware comparisons and prepare the BI model without rebuilding this foundation.
+Continue from [PROJECT_STATE.md](PROJECT_STATE.md), [SESSION_LOG.md](SESSION_LOG.md) and [NEXT_SESSION_PROMPT.md](NEXT_SESSION_PROMPT.md). Session 4 will complete native Excel/Power BI verification and final portfolio QA without rebuilding the established pipeline or dashboard.
