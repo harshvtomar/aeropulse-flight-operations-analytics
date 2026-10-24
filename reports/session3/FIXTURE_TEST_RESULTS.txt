@@ -7,4 +7,4 @@ tests/test_bi_export.py: 40 warnings
     raw = d[c].replace(r'^\s*$',np.nan,regex=True)
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-189 passed, 8 deselected, 40 warnings in 26.82s
+189 passed, 8 deselected, 40 warnings in 23.91s

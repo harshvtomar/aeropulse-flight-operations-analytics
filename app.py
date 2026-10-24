@@ -48,8 +48,12 @@ def q(kind, selected, group=None):
 
 
 def reset_filters():
-    for key in ['months', 'airlines', 'origin', 'destination', 'route', 'hours', 'severity', 'minimum']:
-        st.session_state.pop(key, None)
+    # Explicit values synchronize existing browser widgets as well as Python state.
+    defaults = dict(months=['2025-01', '2025-02', '2025-03'],
+                    airlines=data.options('airline'), origin='All', destination='All',
+                    route='All', hours=(0, 23), severity=list(SEVERITIES), minimum=1000)
+    for key, value in defaults.items():
+        st.session_state[key] = value
 
 
 def cascade(label, key, options):
