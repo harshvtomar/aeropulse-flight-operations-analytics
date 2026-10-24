@@ -155,4 +155,4 @@ Fixtures are explicitly synthetic and confined to tests. The real integration te
 
 This is one quarter of domestic reporting-carrier operations, not all US aviation. Reported cause minutes are allocations, not independently proven root causes. Interactive airline/airport rankings are raw; the separate, explicitly labeled Session 2 pair-specific mix study supplies adjusted comparisons with common-support limits. Five extreme arrival delays and seven extreme departure delays are flagged but retained. There are no claimed savings or profit improvements.
 
-Continue from [PROJECT_STATE.md](PROJECT_STATE.md), [SESSION_LOG.md](SESSION_LOG.md) and [NEXT_SESSION_PROMPT.md](NEXT_SESSION_PROMPT.md). Session 4 will complete native Excel/Power BI verification and final portfolio QA without rebuilding the established pipeline or dashboard.
+Continue from [PROJECT_STATE.md](PROJECT_STATE.md), [SESSION_LOG.md](SESSION_LOG.md) and [NEXT_SESSION_PROMPT.md](NEXT_SESSION_PROMPT.md). Portfolio QA is delivered; native Excel/Power BI execution remains pending. Follow the native verification handoff without rebuilding the established pipeline or dashboard.
